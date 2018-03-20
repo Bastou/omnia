@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641275, b: 0.5748174, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -218,7 +218,6 @@ GameObject:
   - component: {fileID: 311536925}
   - component: {fileID: 311536924}
   - component: {fileID: 311536923}
-  - component: {fileID: 311536922}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -245,17 +244,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &311536922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 311536920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e402a139d2ccd401db1332ccbf8bae8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &311536923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,15 +283,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 311536922}
-        m_MethodName: LoadByIndex
-        m_Mode: 3
+      - m_Target: {fileID: 2097538874}
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Menu
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -395,11 +383,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78afc92ead08b094593170c69bcb525c, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &401618005 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4200552841861630, guid: 78afc92ead08b094593170c69bcb525c,
-    type: 2}
-  m_PrefabInternal: {fileID: 401618004}
 --- !u!1 &427620350
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,6 +477,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!4 &1192827726 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4830958477363536, guid: 78afc92ead08b094593170c69bcb525c,
+    type: 2}
+  m_PrefabInternal: {fileID: 401618004}
 --- !u!1 &1202103062
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,7 +756,7 @@ Transform:
   m_LocalPosition: {x: -1.17, y: 0, z: 12.62}
   m_LocalScale: {x: 12.395833, y: 12.395833, z: 12.395833}
   m_Children:
-  - {fileID: 401618005}
+  - {fileID: 1192827726}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -978,6 +966,46 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!1 &2097538873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2097538875}
+  - component: {fileID: 2097538874}
+  m_Layer: 0
+  m_Name: ARFACECTRL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2097538874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2097538873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff4970724a2a4b9895ec9fd75ead724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2097538875
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2097538873}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -60.627792, y: -502.08972, z: 83.55092}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2132357694
 GameObject:
   m_ObjectHideFlags: 0
