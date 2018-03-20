@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="winston" size="10.000000 12.395833" />
+    <ImageTarget name="text-cache-mini" size="11.000000 4.971705" />
+    <ImageTarget name="son1" size="12.000000 2.813438" />
+    <ImageTarget name="map" size="14.000000 17.274126" />
+    <ImageTarget name="journal1" size="13.000000 17.663601" />
+    <ImageTarget name="citation1" size="9.000000 12.847393" />
+  </Tracking>
+</QCARConfig>
