@@ -9,13 +9,11 @@ public class RedirectionOnTouch : MonoBehaviour, IPointerClickHandler {
 	#region IPointerClickHandler implementation
 	public void OnPointerClick (PointerEventData eventData) {
 		Debug.Log("Touched");
+		SceneManager.LoadScene ("FichePerso");
 
 	}
 	#endregion
 
-	public void LoadByIndex(int sceneIndex){
-		SceneManager.LoadScene (sceneIndex);
-	}
 
 	// Use this for initialization
 	void Start () {

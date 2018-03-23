@@ -53,12 +53,12 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 			if (isNotificationHidden == true) {
 				increment += 0.1F;
 				float t = (increment - startTime) / (duration / 6);
-				myNotification.transform.position = new Vector3 (positionXImage, Mathf.Lerp (positionYImage, positionYImage - 150, t), 0);
+				myNotification.transform.position = new Vector3 (positionXImage, Mathf.Lerp (positionYImage, positionYImage - 200, t), 0);
 
 			} else {
 				increment += 0.1F;
 				float t = (increment - startTime) / (duration / 6);
-				myNotification.transform.position = new Vector3 (positionXImage, Mathf.Lerp (positionYImage, positionYImage + 150, t), 0);
+				myNotification.transform.position = new Vector3 (positionXImage, Mathf.Lerp (positionYImage, positionYImage + 200, t), 0);
 			}
 		}
 	}
