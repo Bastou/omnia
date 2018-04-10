@@ -32,7 +32,6 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 		}
 
 		updatePositionNotification ();
-
 	}
 
 	private void updatePositionNotification () {
@@ -42,7 +41,6 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 		positionXImage = myNotification.transform.position.x;
 		positionYImage = myNotification.transform.position.y;
 	}
-		
 
 	// Update is called once per frame
 	void Update () {
@@ -54,7 +52,6 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 				increment += 0.1F;
 				float t = (increment - startTime) / (duration / 6);
 				myNotification.transform.position = new Vector3 (positionXImage, Mathf.Lerp (positionYImage, positionYImage - 200, t), 0);
-
 			} else {
 				increment += 0.1F;
 				float t = (increment - startTime) / (duration / 6);
@@ -74,11 +71,15 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 
 	private void OnTrackingFound() {
 		Debug.Log ("Tracking found");
+
 		updatePositionNotification ();
 		increment = 0.0F;
 		isWinstoneDetected = true;
 		isNotificationHidden = true;
 
+		GameControl.control.isMapUnlocked = true;
+		GameControl.control.Save ();
+		Debug.Log (GameControl.control.isMapUnlocked);
 	}
 
 	IEnumerator hideNotification() {
