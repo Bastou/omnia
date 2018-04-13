@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641275, b: 0.5748174, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.5748249, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1438,7 +1438,7 @@ MonoBehaviour:
   mPreserveChildSize: 0
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/omnia01.xml
-  mExtendedTracking: 0
+  mExtendedTracking: 1
   mAspectRatio: 1.2338661
   mImageTargetType: 0
   mWidth: 14.000001
@@ -1747,7 +1747,7 @@ MonoBehaviour:
   mPreserveChildSize: 0
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/omnia01.xml
-  mExtendedTracking: 0
+  mExtendedTracking: 1
   mAspectRatio: 1.2395833
   mImageTargetType: 0
   mWidth: 10
@@ -2151,7 +2151,7 @@ MonoBehaviour:
   mPreserveChildSize: 0
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/omnia01.xml
-  mExtendedTracking: 0
+  mExtendedTracking: 1
   mAspectRatio: 0.23445316
   mImageTargetType: 0
   mWidth: 1
