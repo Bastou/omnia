@@ -10,7 +10,7 @@ public class GameControl : MonoBehaviour {
 	public static GameControl control;
 	public bool isMapUnlocked;
 
-	// Create a singleton GameControl to manage data persistence
+	// Créer un singleton GameControl pour la gestion des données persistantes
 	void Awake () {
 		if (control == null) {
 			DontDestroyOnLoad (gameObject);
@@ -20,10 +20,12 @@ public class GameControl : MonoBehaviour {
 		}
 	}
 
+	// Label pour voir l'état de la variable "isMapUnlocked"
 	void OnGUI(){
 		GUI.Label (new Rect (10, 10, 100, 30), "isMapUnlocked: " + isMapUnlocked);
 	}
 
+	// Sauvegarde les données
 	public void Save() {
 		BinaryFormatter bf = new BinaryFormatter ();
 		FileStream file = File.Create (Application.persistentDataPath + "/data.dat");
@@ -35,6 +37,7 @@ public class GameControl : MonoBehaviour {
 		file.Close();
 	}
 
+	// Charge les données
 	public void Load() {
 		if (File.Exists (Application.persistentDataPath + "/data.dat")) {
 			BinaryFormatter bf = new BinaryFormatter ();
