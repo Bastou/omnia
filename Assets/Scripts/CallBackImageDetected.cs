@@ -8,19 +8,15 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 	private TrackableBehaviour mTrackableBehaviour;
 	public Transform myModelPrefab;
 
-//	public float minimum = 10.0F;
-//	public float maximum = 600.0F;
 	public float duration = 1F;
 	public bool isWinstoneDetected = false;
 	public bool isNotificationHidden = true;
-	private float startTime;
-//	public float positionXImage = myNotification.transform.position.x;
-//	public float positionYImage = myNotification.transform.position.y;
-
 	public float positionXImage;
 	public float positionYImage;
-
+	private float startTime;
 	public float increment = 0.0F;
+	public bool isAntiStackActive = false;
+	public Vector3 lastPosition;
 
 	// Use this for initialization
 	void Start () {
@@ -32,7 +28,6 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 		}
 
 		updatePositionNotification ();
-
 	}
 
 	private void updatePositionNotification () {
@@ -47,8 +42,24 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 	// Update is called once per frame
 	void Update () {
 		if (isWinstoneDetected == true) {
+			if (isAntiStackActive == true) {
+				UnityEngine.UI.Image myNotification = GameObject.Find ("popup").GetComponent<UnityEngine.UI.Image> ();
 
-			UnityEngine.UI.Image myNotification = GameObject.Find ("popup").GetComponent<UnityEngine.UI.Image> ();
+				if (isNotificationHidden == true) {
+					increment += 0.1F;
+					float t = (increment - startTime) / (duration / 6);
+					myNotification.transform.position = new Vector3 (positionXImage, Mathf.Lerp (positionYImage, positionYImage - 150, t), 0);
+					if (myNotification.transform.position != lastPosition) {
+						isAntiStackActive = true;
+					} else {
+						isAntiStackActive = false;
+					}
+					lastPosition = myNotification.transform.position;
+				} else {
+					Debug.Log ("test");
+					increment += 0.1F;
+					float t = (increment - startTime) / (duration / 6);
+					myNotification.transform.position = new Vector3 (positionXImage, Mathf.Lerp (positionYImage, positionYImage + 150, t), 0);
 
 			if (isNotificationHidden == true) {
 				increment += 0.1F;
@@ -78,7 +89,12 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 		increment = 0.0F;
 		isWinstoneDetected = true;
 		isNotificationHidden = true;
+		isAntiStackActive = true;
+	}
 
+	private void onTrackingLost() {
+		Debug.Log("Trackable lost");
+		StartCoroutine(hideNotification());
 	}
 
 	IEnumerator hideNotification() {
@@ -86,10 +102,6 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 		updatePositionNotification ();
 		increment = 0.0F;
 		isNotificationHidden = false;
-	}
-
-	private void onTrackingLost() {
-		Debug.Log("Trackable lost");
-		StartCoroutine(hideNotification());
+		//isAntiStackActive = false;
 	}
 }
