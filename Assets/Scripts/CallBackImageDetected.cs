@@ -5,13 +5,12 @@ using UnityEngine.UI;
 using Vuforia;
 
 public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
+	
 	private TrackableBehaviour mTrackableBehaviour;
-
 	public AnimationPopup AnimationPopupScript;
 
 	// Use this for initialization
 	void Start () {
-		Debug.Log("Init CallBackImageDetection");
 		mTrackableBehaviour = GetComponent<TrackableBehaviour>();
 
 		if (mTrackableBehaviour) {
@@ -19,6 +18,7 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 		}
 	}
 
+	// Appel OnTrackingFound quand une image target est détectée et OnTrackingLost quand l'image target est perdue
 	public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus) {
 		if (newStatus == TrackableBehaviour.Status.DETECTED || newStatus == TrackableBehaviour.Status.TRACKED || newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED) {
 			OnTrackingFound();
@@ -28,18 +28,38 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 		}
 	}
 
+	
 	private void OnTrackingFound() {
-		Debug.Log ("Tracking found");
-		
-		// Déblocage de la map
-		GameControl.control.isMapUnlocked = true;
-		GameControl.control.Save ();
-		
-		// Apparition de la Popup
-		AnimationPopupScript.MoveNotification();		 
+		// Gère toutes les images target
+		switch (mTrackableBehaviour.TrackableName)
+		{
+			case "winston":
+				AnimationPopup();
+				break;
+			
+			case "map":
+				UnlockMap();
+				break;
+			
+			default:
+				print("Didn't find specific image target");
+				break;
+		}		 
+	}
+	
+	private void onTrackingLost() {
 	}
 
-	private void onTrackingLost() {
-		Debug.Log("Trackable lost");
+	private void UnlockMap() {
+		// Déblocage de la map et sauvegarde des données
+		GameControl.control.isMapUnlocked = true;
+		GameControl.control.Save ();
 	}
+
+	private void AnimationPopup() {
+		// Apparition de la Popup
+		AnimationPopupScript.MoveNotification();
+	}
+
+	
 }

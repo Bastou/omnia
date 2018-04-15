@@ -163,3 +163,23 @@ build/
 
 # END Xcode
 
+
+\.idea/\.idea\.omnia/\.idea/contentModel\.xml
+
+\.idea/\.idea\.omnia/\.idea/indexLayout\.xml
+
+\.idea/\.idea\.omnia/\.idea/modules\.xml
+
+\.idea/\.idea\.omnia/\.idea/vcs\.xml
+
+\.idea/\.idea\.omnia/\.idea/workspace\.xml
+
+Assets/Plugins\.meta
+
+Assets/Plugins/Editor\.meta
+
+Assets/Plugins/Editor/JetBrains\.meta
+
+Assets/Plugins/Editor/JetBrains/Unity3DRider\.cs
+
+Assets/Plugins/Editor/JetBrains/Unity3DRider\.cs\.meta
