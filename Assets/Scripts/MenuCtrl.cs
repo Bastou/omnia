@@ -5,15 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class MenuCtrl : MonoBehaviour {
 
-	public void LoadScene(string sceneName) {
-		StartCoroutine(StartScene(sceneName));
+	UnityEngine.UI.Button button;
+
+	void Start() {
+
+		// # Find btn map and set active if map is unlocked
+//		button = GameObject.Find("btnMap").GetComponent<UnityEngine.UI.Button>();
+//		Debug.Log ("isMapUnlocked = " + GameControl.control.isMapUnlocked);
+//		if (GameControl.control.isMapUnlocked == true) {
+//			button.gameObject.SetActive (true);
+//		} else {
+//			button.gameObject.SetActive (false);
+//		}
 	}
 
 	// SceneLoader
-	IEnumerator StartScene(string sceneName) {
-		float fadeTime = GetComponent<Fading> ().BeginFade (1); // 1 cause fade out
-		yield return new WaitForSeconds(fadeTime);
+	public void LoadScene(string sceneName) {
 		SceneManager.LoadScene (sceneName);
 	}
-	
 }
