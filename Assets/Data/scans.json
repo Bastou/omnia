@@ -1,0 +1,30 @@
+{
+	"scans": 
+	[
+		{
+			"id": 0, 
+            "type": "code",
+            "state": true
+        },
+		{
+			"id": 1, 
+            "type": "read",
+            "state": true
+        },
+        {
+			"id": 2, 
+            "type": "code",
+            "state": false
+        },
+        {
+			"id": 3, 
+            "type": "code",
+            "state": false
+        },
+        {
+			"id": 4, 
+            "type": "read",
+            "state": false
+        }
+	]
+}

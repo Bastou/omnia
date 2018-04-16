@@ -1,0 +1,53 @@
+{
+	"parts": 
+	[
+		{
+			"id": 0, 
+			"infos" : 
+			[
+				{
+					"state": 0, 
+					"name": "Journal - Partie 1", 
+					"content": "Lorem ipsum dolor sit amet",
+					"unlocked": "false"
+				},
+				{
+					"state": 1, 
+					"name": "Journal - Partie 1", 
+					"content": "Lorem ipsum dolor sit amet",
+					"unlocked": "true"
+                },
+                {
+					"state": 2, 
+					"name": "Journal - Partie 1", 
+					"content": "Lorem ipsum dolor sit amet",
+					"unlocked": "true"
+				}
+			]
+		},
+		{
+			"id": 1, 
+			"infos" : 
+			[
+				{
+					"state": 0, 
+					"name": "Journal - Partie 2", 
+					"content": "Lorem ipsum dolor sit amet",
+					"unlocked": "false"
+				},
+				{
+					"state": 1, 
+					"name": "Journal - Partie 2", 
+					"content": "Lorem ipsum dolor sit amet",
+					"unlocked": "false"
+                },
+                {
+					"state": 2, 
+					"name": "Journal - Partie 2", 
+					"content": "Lorem ipsum dolor sit amet",
+					"unlocked": "true"
+				}
+			]
+		}
+	]
+}
