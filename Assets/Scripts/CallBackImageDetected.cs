@@ -39,6 +39,11 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 			
 			case "map":
 				UnlockMap();
+				/*AnimationPopup();*/
+				break;
+			
+			case "son1":
+				AnimationPopup();
 				break;
 			
 			default:
@@ -59,7 +64,5 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 	private void AnimationPopup() {
 		// Apparition de la Popup
 		AnimationPopupScript.MoveNotification();
-	}
-
-	
+	}	
 }

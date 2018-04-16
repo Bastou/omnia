@@ -659,7 +659,7 @@ PlayerSettings:
   apiCompatibilityLevel: 2
   cloudProjectId: df86af39-f68a-4b5d-be5b-2832a221ede7
   projectName: mobile_ui (1)
-  organizationId: trafal25
+  organizationId: omnia-project
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
