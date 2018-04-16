@@ -39,16 +39,16 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 		switch (mTrackableBehaviour.TrackableName)
 		{
 			case "winston":
-				AnimationPopup();
+				AnimationPopup(targetName:mTrackableBehaviour.TrackableName);
 				break;
 			
 			case "map":
+				AnimationPopup(targetName:mTrackableBehaviour.TrackableName);
 				UnlockMap();
-				/*AnimationPopup();*/
 				break;
 			
 			case "son1":
-				AnimationPopup();
+				AnimationPopup(targetName:mTrackableBehaviour.TrackableName);
 				break;
 			
 			default:
@@ -68,9 +68,9 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 		GameControl.control.Save ();
 	}
 
-	private void AnimationPopup() 
+	private void AnimationPopup(string targetName) 
 	{
 		// Apparition de la Popup
-		AnimationPopupScript.MoveNotification();
+		AnimationPopupScript.MoveNotification(targetName);
 	}	
 }
