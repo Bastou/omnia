@@ -5,18 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/AvezVousLu.unity
-    guid: 7b93ea537c2624d8d917c04004f3d289
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: aa997eafb055844ac8a7311719ce0f12
   - enabled: 0
-    path: Assets/Scenes/PreARView.unity
-    guid: c67f3c114caa247a0baa6bee552b57b1
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/ARFace.unity
-    guid: f73976c30bd8347e7be39f65019527a7
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/AR Main.unity
     guid: 68d338ac1a63b42c3ba6663a995b6074
@@ -26,12 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map.unity
     guid: 7118d719f9f3d4eebaeebd16e862b089
-  - enabled: 1
-    path: Assets/Scenes/Autorize.unity
-    guid: 2f207cd0e145747189539e68e9fe49ee
-  - enabled: 1
-    path: Assets/Scenes/Contrat.unity
-    guid: bc8ab2516a1504984b5142d2a6311da5
-  - enabled: 1
-    path: Assets/Scenes/Lis.unity
-    guid: 265033c25c0564fe68abd92f4eaba43e
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000

@@ -158,7 +158,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.OmniaCorp.omnia
+    Android: com.OmniaCorp.omnia1984
     iOS: com.OmniaCorp.omnia1984
   buildNumber: {}
   AndroidBundleVersionCode: 1
@@ -648,6 +648,7 @@ PlayerSettings:
   XboxOneSplashScreen: {fileID: 0}
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
+  XboxOneXTitleMemory: 8
   xboxOneScriptCompiler: 0
   vrEditorSettings:
     daydream:

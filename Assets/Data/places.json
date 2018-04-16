@@ -1,0 +1,50 @@
+{
+	"place": 
+	[
+		{
+			"id": 0, 
+			"infos" : 
+			[
+				{
+					"state": 0, 
+					"name": "Winston Smith", 
+					"image": "./images/jpg/characters/winston/0.jpg",
+					"age": 39, 
+					"occupation": "Commissariat des Archives", 
+					"relations": [ 
+						{
+							"id": 4
+						},
+						{
+							"id": 6
+						}
+					], 
+					"mood": "happy",
+					"description": "Fonctionnaire du Parti âgé de 39 ans, Winston Smith travaille au Commissariat des Archives, où il est chargé de falsifier le passé pour le compte du régime. Son travail de falsification peut ressembler à ceci : « times 3.12.83 report ordrejour bb plusnonsatisf. Ref nonêtres récrire entier soumhaut avantclassement » qui est rendu ainsi en Ancilangue : « Le compte rendu de l'ordre du jour de Big Brother dans le numéro du journal le Times du 3 décembre 1983, est extrêmement insatisfaisant et fait allusion à des personnes non existantes. Récrire en entier et soumettre votre projet aux autorités compétentes avant d'envoyer au classement. » Il a été marié avec Catherine, d’avec laquelle il est séparé depuis dix ans.",
+					"unlocked": true
+				},
+				{
+					"state": 1, 
+					"name": "Winston Smith", 
+					"image": "./images/jpg/characters/winston/1.jpg",
+					"age": 39, 
+					"occupation": "Commissariat des Archives", 
+					"relations": [ 
+						{
+							"id": 4
+						},
+						{
+							"id": 6
+						},
+						{
+							"id": 2
+						}
+					], 
+					"mood": "sad",
+					"description": "Lorem ipsum dolor sit amet...",
+					"unlocked": true
+				}
+			]
+		}
+	]
+}
