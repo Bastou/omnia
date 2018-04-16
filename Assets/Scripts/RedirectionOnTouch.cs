@@ -8,19 +8,8 @@ public class RedirectionOnTouch : MonoBehaviour, IPointerClickHandler {
 	
 	#region IPointerClickHandler implementation
 	public void OnPointerClick (PointerEventData eventData) {
-		Debug.Log("Touched");
+		//Redirige vers la scène FichePerso au clic/touch
 		SceneManager.LoadScene ("FichePerso");
-
 	}
 	#endregion
-
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
 }
