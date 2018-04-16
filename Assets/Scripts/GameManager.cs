@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
 
 	public static GameManager instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
+	private TestPersistantIncrementer persistantIncrementerScript;                       //Store a reference to our BoardManager which will set up the level.
 	private int level = 3;                                  //Current level number, expressed in game as "Day 1".
 
 	//Awake is always called before any Start functions
@@ -27,6 +28,9 @@ public class GameManager : MonoBehaviour
 		//Sets this to not be destroyed when reloading scene
 		DontDestroyOnLoad(gameObject);
 
+		//Get a component reference to the attached Test script
+		persistantIncrementerScript = GetComponent<TestPersistantIncrementer>();
+
 
 		//Call the InitGame function to initialize the first level 
 		InitGame();
@@ -36,6 +40,7 @@ public class GameManager : MonoBehaviour
 	void InitGame()
 	{
 		Debug.Log("Init Game");
+		persistantIncrementerScript.Init ();
 	}
 
 
