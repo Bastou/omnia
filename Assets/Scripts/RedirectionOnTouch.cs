@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class RedirectionOnTouch : MonoBehaviour, IPointerClickHandler {
 	
 	#region IPointerClickHandler implementation
-	public void OnPointerClick (PointerEventData eventData) {
+	public void OnPointerClick (PointerEventData eventData) 
+	{
 		//Redirige vers la scène FichePerso au clic/touch
 		SceneManager.LoadScene ("FichePerso");
 	}

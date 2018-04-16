@@ -7,7 +7,8 @@ public class takePhoto : MonoBehaviour {
 
 	WebCamTexture webCamTexture;
 
-	void Start () {
+	void Start () 
+	{
 		WebCamDevice[] devices = WebCamTexture.devices;
 		foreach (WebCamDevice cam in devices) {
 			if (cam.isFrontFacing) {
@@ -18,7 +19,8 @@ public class takePhoto : MonoBehaviour {
 		}
 	}
 
-	public void test() {
+	public void snapshot() 
+	{
 		Texture2D photo = new Texture2D (webCamTexture.width, webCamTexture.height);
 		photo.SetPixels (webCamTexture.GetPixels ());
 		photo.Apply ();

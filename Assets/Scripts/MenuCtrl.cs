@@ -7,7 +7,8 @@ public class MenuCtrl : MonoBehaviour {
 
 	UnityEngine.UI.Button button;
 
-	void Start() {
+	void Start() 
+	{
 
 		// # Find btn map and set active if map is unlocked
 //		button = GameObject.Find("btnMap").GetComponent<UnityEngine.UI.Button>();
@@ -20,7 +21,8 @@ public class MenuCtrl : MonoBehaviour {
 	}
 
 	// SceneLoader
-	public void LoadScene(string sceneName) {
+	public void LoadScene(string sceneName) 
+	{
 		SceneManager.LoadScene (sceneName);
 	}
 }
