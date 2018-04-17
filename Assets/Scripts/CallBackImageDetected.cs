@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Vuforia;
+using System.IO;
 
 public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 	
 	private TrackableBehaviour mTrackableBehaviour;
 	public AnimationPopup AnimationPopupScript;
-	private string charactersFileName = "characters.json";
+	private string gameDataFileName = "character.json";
 
 	// Use this for initialization
 	void Start () {
@@ -34,9 +35,10 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 		// Gère toutes les images target
 		switch (mTrackableBehaviour.TrackableName)
 		{
-			case "winston":
-				AnimationPopup();
-				break;
+		case "winston":
+			AnimationPopup ();
+			deserializeJson ();
+			break;
 			
 			case "map":
 				UnlockMap();
@@ -62,8 +64,23 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 		AnimationPopupScript.MoveNotification();
 	}
 
-	private void LoadGameData() {
-		
+	private void deserializeJson() {
+
+		string filePath = Path.Combine(Application.streamingAssetsPath, gameDataFileName);
+
+		if (File.Exists (filePath)) {
+			// Read the json from the file into a string
+			string dataAsJson = File.ReadAllText (filePath); 
+			// Pass the json to JsonUtility, and tell it to create a GameData object from it
+
+			Character[] character = JsonHelper.FromJson<Character>(dataAsJson);
+			Debug.Log("name:" + character[0].infos[0].name);
+//			foreach(object isxtem in character[0].infos) {
+//				Debug.Log("INFOS:" + item);
+//			}
+		} else {
+			Debug.Log ("///// NOPE ///////"); 
+		}
 	}
 
 	
