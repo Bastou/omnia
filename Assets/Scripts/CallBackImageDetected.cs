@@ -8,6 +8,7 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 	
 	private TrackableBehaviour mTrackableBehaviour;
 	public AnimationPopup AnimationPopupScript;
+	private string charactersFileName = "characters.json";
 
 	// Use this for initialization
 	void Start () {
@@ -59,6 +60,10 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 	private void AnimationPopup() {
 		// Apparition de la Popup
 		AnimationPopupScript.MoveNotification();
+	}
+
+	private void LoadGameData() {
+		
 	}
 
 	
