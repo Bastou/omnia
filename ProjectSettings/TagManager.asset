@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - popupson1
+  - popupson2
+  - popupson3
   layers:
   - Default
   - TransparentFX

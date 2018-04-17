@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using UnityEngine;
 using UnityEngine.UI;
 using Vuforia;
@@ -8,10 +9,14 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 	
 	private TrackableBehaviour mTrackableBehaviour;
 	public AnimationPopup AnimationPopupScript;
+	private ScanSoundNotifs ScanSoundNotifs;
 
 	// Use this for initialization
-	void Start () 
+	void Start ()
 	{
+		ScanSoundNotifs = GetComponent<ScanSoundNotifs>();
+		Debug.Log(ScanSoundNotifs);
+		
 		mTrackableBehaviour = GetComponent<TrackableBehaviour>();
 
 		if (mTrackableBehaviour) {
@@ -35,6 +40,7 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 	
 	private void OnTrackingFound() 
 	{
+		
 		// Gère toutes les images target
 		switch (mTrackableBehaviour.TrackableName)
 		{
@@ -49,6 +55,8 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 			
 			case "son1":
 				AnimationPopup(targetName:mTrackableBehaviour.TrackableName);
+				if(ScanSoundNotifs)
+				 ScanSoundNotifs.ToggleSoundNotif();
 				break;
 			
 			default:
@@ -72,5 +80,5 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 	{
 		// Apparition de la Popup
 		AnimationPopupScript.MoveNotification(targetName);
-	}	
+	}
 }
