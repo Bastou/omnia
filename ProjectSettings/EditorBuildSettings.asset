@@ -9,10 +9,13 @@ EditorBuildSettings:
     path: Assets/Scenes/AvezVousLu.unity
     guid: 7b93ea537c2624d8d917c04004f3d289
   - enabled: 1
+    path: Assets/Scenes/Autorize.unity
+    guid: d3d11cec3ac904443a165d380217e227
+  - enabled: 1
     path: Assets/Scenes/Contrat.unity
     guid: bc8ab2516a1504984b5142d2a6311da5
   - enabled: 1
-    path: Assets/Scenes/Autorize.unity
+    path: Assets/Scenes/PersoWrong.unity
     guid: 2f207cd0e145747189539e68e9fe49ee
   - enabled: 1
     path: Assets/Scenes/Lis.unity
