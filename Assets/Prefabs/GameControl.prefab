@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4735087446238220}
   - component: {fileID: 114501193372456622}
+  - component: {fileID: 114096711634337788}
+  - component: {fileID: 114944002176373528}
   m_Layer: 0
   m_Name: GameControl
   m_TagString: Untagged
@@ -40,6 +42,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114096711634337788
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1418665697972244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff4970724a2a4b9895ec9fd75ead724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114501193372456622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -51,4 +64,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7c989b51b1f4188a2aed0701006dde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reputation: 0
+  isMapUnlocked: 0
+--- !u!114 &114944002176373528
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1418665697972244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bef0e06c49e204f058a9797695dba67d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeOutTexture: {fileID: 2800000, guid: 704b5608b1b4e4193ae3a74d64c09cfe, type: 3}
+  fadeSpeed: 0.2

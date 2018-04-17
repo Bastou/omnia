@@ -20,7 +20,14 @@ public class MenuCtrl : MonoBehaviour {
 	}
 
 	// SceneLoader
-	public void LoadScene(string sceneName) {
-		SceneManager.LoadScene (sceneName);
+ 	public void LoadScene(string sceneName) {
+		StartCoroutine(StartScene(sceneName));
 	}
+
+	IEnumerator StartScene(string sceneName) {
+		float fadeTime = GetComponent<Fading> ().BeginFade (1); // 1 cause fade out
+		yield return new WaitForSeconds(fadeTime);
+		SceneManager.LoadScene (sceneName);	 		
+ 	}	 	
+
 }
