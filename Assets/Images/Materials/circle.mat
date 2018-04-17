@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: circle
-  m_Shader: {fileID: 4800000, guid: 5b0d0ce37a7e1427084e9e60e0a270b1, type: 3}
+  m_Shader: {fileID: 4800000, guid: 3479dded4cdc94f4b9ee238ce1cf7be2, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -60,6 +60,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
+    - _CenterX: 0.25
+    - _CenterY: 0.5
     - _Cutoff: 0
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -70,6 +72,8 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _Radius: 0.33827358
+    - _Sharpness: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
