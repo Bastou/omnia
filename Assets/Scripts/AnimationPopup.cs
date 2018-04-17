@@ -1,24 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization.Formatters;
 using UnityEngine;
 
-public class AnimationPopup : MonoBehaviour {
+public class AnimationPopup : MonoBehaviour
+{
 	private Animator anim;
 
-	void Start() {
+	private UnityEngine.UI.Text textNotification;
+	
+	void Start()
+	{
 		anim = GetComponent<Animator>();
+		textNotification = GameObject.Find("Text").GetComponent<UnityEngine.UI.Text>();
 	}
 	
-	// Set la trigger "Move" dans l'animation controller
-	public void MoveNotification()
+	public void MoveNotification(string targetName)
 	{
-		Debug.Log(anim.GetCurrentAnimatorStateInfo(0).IsName("animation_popup"));
-		//Debug.Log(anim.GetCurrentAnimatorStateInfo(0).IsName("Initial_state"));
-		//Debug.Log(anim.GetCurrentAnimatorClipInfo(0));
+		// Detecte si l'anim est en cours
+		if (!anim.GetCurrentAnimatorStateInfo(0).IsName("animation_popup"))
+		{
+			// Défini dynamiquement le contenu de la popup en fonction de l'image target détectée
+			switch (targetName)
+			{		
+				case "winston":
+					textNotification.text = "Citoyen, vous venez de rencontrer votre premier camarade du Parti : Winston Smith";
+					break;
+				case "map":
+					textNotification.text = "Citoyen, vous venez de débloquer un nouvel élément de la carte de Londres";
+					break;
+				default: 
+					textNotification.text = "Citoyen, vous venez de débloquer un nouveau contenu";
+					break;
+			}
 			
-		
-		if (!anim.GetCurrentAnimatorStateInfo(0).IsName("animation_popup")) {
+			// Lance l'animation de la popup
 			anim.SetTrigger("Move");
-		}	
+		}
 	}
 }
