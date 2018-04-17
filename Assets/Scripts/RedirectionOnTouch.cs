@@ -10,6 +10,7 @@ public class RedirectionOnTouch : MonoBehaviour, IPointerClickHandler {
 	public void OnPointerClick (PointerEventData eventData) 
 	{
 		//Redirige vers la scène FichePerso au clic/touch
+		print("Clicked on popup");
 		SceneManager.LoadScene ("FichePerso");
 	}
 	#endregion

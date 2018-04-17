@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class ScanSoundNotifs : MonoBehaviour {
     private GameObject popupson;
+	private string basePath = "/UI/popupson/";
+	private GameObject container;
 
     // Active images for sound notifs
     public void ToggleSoundNotif(string name = "popupson_note1")
     {
-        string basePath = "/UI/popupson/";
+
+		container = GameObject.Find("/UI/popupson/");
+		Debug.Log (GameObject.Find("/UI/popupson/"));
+		//container.SetActive (true);
         popupson = GameObject.Find(basePath + name);
-        Debug.Log(popupson.name);
         popupson.SetActive(!popupson.activeInHierarchy);
     }
 }

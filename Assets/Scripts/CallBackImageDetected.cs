@@ -8,14 +8,14 @@ using Vuforia;
 public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 	
 	private TrackableBehaviour mTrackableBehaviour;
-	public AnimationPopup AnimationPopupScript;
 	private ScanSoundNotifs ScanSoundNotifs;
+	public AnimationPopup AnimationPopupScript;
+	public ScanClickCtrl ScanClickCtrl;
 
 	// Use this for initialization
 	void Start ()
 	{
 		ScanSoundNotifs = GetComponent<ScanSoundNotifs>();
-		Debug.Log(ScanSoundNotifs);
 		
 		mTrackableBehaviour = GetComponent<TrackableBehaviour>();
 
@@ -41,22 +41,26 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 	private void OnTrackingFound() 
 	{
 		
-		// Gère toutes les images target
+		// Gere toutes les images target
 		switch (mTrackableBehaviour.TrackableName)
 		{
 			case "winston":
+			    ScanClickCtrl.sceneName = "FichePerso";
 				AnimationPopup(targetName:mTrackableBehaviour.TrackableName);
 				break;
 			
 			case "map":
+				ScanClickCtrl.sceneName = "Map";
 				AnimationPopup(targetName:mTrackableBehaviour.TrackableName);
 				UnlockMap();
 				break;
 			
 			case "son1":
 				AnimationPopup(targetName:mTrackableBehaviour.TrackableName);
-				if(ScanSoundNotifs)
-				 ScanSoundNotifs.ToggleSoundNotif();
+				if (ScanSoundNotifs)
+				{
+					ScanSoundNotifs.ToggleSoundNotif();	
+				}
 				break;
 			
 			default:

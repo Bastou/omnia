@@ -5,6 +5,7 @@ public class ImageTargetAudioPlay : MonoBehaviour,
 ITrackableEventHandler
 {
 	private TrackableBehaviour mTrackableBehaviour;
+	private AudioSource audio;
 
 	void Start()
 	{
@@ -19,7 +20,7 @@ ITrackableEventHandler
 		TrackableBehaviour.Status previousStatus,
 		TrackableBehaviour.Status newStatus)
 	{
-		AudioSource audio = GetComponent<AudioSource>();
+		audio = GetComponent<AudioSource>();
 		if (newStatus == TrackableBehaviour.Status.DETECTED ||
 			newStatus == TrackableBehaviour.Status.TRACKED ||
 			newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
@@ -33,5 +34,11 @@ ITrackableEventHandler
 			// Stop audio when target is lost
 			// audio.Stop();
 		}
-	}   
+	}
+
+	public void stopSound()
+	{
+		audio.Stop();
+	}
+	
 }
