@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 1152719587}
   - component: {fileID: 1152719586}
   - component: {fileID: 1152719585}
+  - component: {fileID: 1152719584}
   m_Layer: 0
   m_Name: ImageTarget
   m_TagString: Untagged
@@ -309,6 +310,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1152719584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152719583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 649f5c2d37ee84e7abb86eb6b6a5c33d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &1152719585
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -548,7 +560,6 @@ GameObject:
   - component: {fileID: 1721942224}
   - component: {fileID: 1721942223}
   - component: {fileID: 1721942222}
-  - component: {fileID: 1721942227}
   m_Layer: 0
   m_Name: ARCamera
   m_TagString: Untagged
@@ -636,14 +647,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1721942227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1721942221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 649f5c2d37ee84e7abb86eb6b6a5c33d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

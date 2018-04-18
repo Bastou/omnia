@@ -12,6 +12,7 @@ public class testTorchLightEffect : MonoBehaviour, ITrackableEventHandler {
 	private Material mat;
 	private bool isTrackableActive;
 	private bool mFlashEnabled = false;
+	private float multiplier;
 
 	// Use this for initialization
 	void Start ()
@@ -30,21 +31,35 @@ public class testTorchLightEffect : MonoBehaviour, ITrackableEventHandler {
 		mat = renderer.sharedMaterial;
 
 		isTrackableActive = false;
-		
+
+		multiplier = 1.0f;
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
-
 		if (isTrackableActive == true)
 		{
 			Vector3 delta = Camera.main.transform.position - mTrackableBehaviour.transform.position;
-
 			distance = delta.magnitude;
-			float radius = distance / 100.0f;
+			float radius = distance / 150.0f;
+
+			if (radius < 0.1f)
+			{
+				radius = 0.1f;
+			}
 			mat.SetFloat("_Radius", radius);
+			
+			Debug.Log(radius);
+
+			Quaternion rotationCamera = Camera.main.transform.rotation;
+			Quaternion target= mTrackableBehaviour.transform.rotation;
+			Quaternion rotation = rotationCamera * Quaternion.Inverse(target);
+			mat.SetFloat("_Rotation", Mathf.Abs(rotation.x) + (Mathf.Abs(rotation.x)*0.5f));
+			
+			
+			
 		}
 	}
 	
@@ -63,9 +78,8 @@ public class testTorchLightEffect : MonoBehaviour, ITrackableEventHandler {
 		if (!mFlashEnabled)
 		{
 			// Turn on flash if it is currently disabled.
-			CameraDevice.Instance.SetFlashTorchMode(true);
-			mFlashEnabled = true;
-			Debug.Log(CameraDevice.Instance);
+			//CameraDevice.Instance.SetFlashTorchMode(true);
+			//mFlashEnabled = true;
 		}
 		else
 		{
