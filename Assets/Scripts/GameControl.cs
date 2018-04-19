@@ -9,6 +9,8 @@ public class GameControl : MonoBehaviour {
 
 	public static GameControl control;
 	public bool isMapUnlocked;
+	public bool isPersoUnlocked;
+	public bool isJournalUnlocked;
 
 	// Créer un singleton GameControl pour la gestion des données persistantes
 	void Awake () 
@@ -37,6 +39,8 @@ public class GameControl : MonoBehaviour {
 
 		PlayerData data = new PlayerData ();
 		data.isMapUnlocked = isMapUnlocked;
+		data.isPersoUnlocked = isPersoUnlocked;
+		data.isJournalUnlocked = isJournalUnlocked;
 
 		bf.Serialize (file, data);
 		file.Close();
@@ -52,6 +56,8 @@ public class GameControl : MonoBehaviour {
 			file.Close();
 
 			isMapUnlocked = data.isMapUnlocked;
+			isPersoUnlocked = data.isPersoUnlocked;
+			isJournalUnlocked = data.isJournalUnlocked;
 		}
 	}
 }
@@ -60,4 +66,6 @@ public class GameControl : MonoBehaviour {
 [Serializable]
 class PlayerData {
 	public bool isMapUnlocked;
+	public bool isPersoUnlocked;
+	public bool isJournalUnlocked;
 }
