@@ -43,23 +43,28 @@ public class testTorchLightEffect : MonoBehaviour, ITrackableEventHandler {
 		{
 			Vector3 delta = Camera.main.transform.position - mTrackableBehaviour.transform.position;
 			distance = delta.magnitude;
-			float radius = distance / 150.0f;
+			
+			float radius = distance / 100.0f;
+			//float radius = distance / 200.0f;
 
 			if (radius < 0.1f)
 			{
 				radius = 0.1f;
 			}
 			mat.SetFloat("_Radius", radius);
-			
-			Debug.Log(radius);
 
 			Quaternion rotationCamera = Camera.main.transform.rotation;
 			Quaternion target= mTrackableBehaviour.transform.rotation;
 			Quaternion rotation = rotationCamera * Quaternion.Inverse(target);
-			mat.SetFloat("_Rotation", Mathf.Abs(rotation.x) + (Mathf.Abs(rotation.x)*0.5f));
+			float rotationX = Mathf.Abs(rotation.x);
+
+			// Mapping de la valeur à passer au shader pour simuler la perspective lorsque
+			// le device n'est pas parallèle au livre (mapping nécessaire pour ne pas trop déformer l'halo)
+			float _RotationLow = 0.5f;
+			float _RotationHigh = 0.9f;;
+			float mappedRotationShader = Mathf.Lerp(_RotationLow, _RotationHigh, rotationX);
 			
-			
-			
+			mat.SetFloat("_Rotation", mappedRotationShader);
 		}
 	}
 	
@@ -78,7 +83,7 @@ public class testTorchLightEffect : MonoBehaviour, ITrackableEventHandler {
 		if (!mFlashEnabled)
 		{
 			// Turn on flash if it is currently disabled.
-			//CameraDevice.Instance.SetFlashTorchMode(true);
+			//		CameraDevice.Instance.SetFlashTorchMode(true);
 			//mFlashEnabled = true;
 		}
 		else
