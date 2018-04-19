@@ -66,21 +66,21 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 
 	private void deserializeJson() {
 
-		string filePath = Path.Combine(Application.streamingAssetsPath, gameDataFileName);
-
-		if (File.Exists (filePath)) {
-			// Read the json from the file into a string
-			string dataAsJson = File.ReadAllText (filePath); 
-			// Pass the json to JsonUtility, and tell it to create a GameData object from it
-
-			Character[] character = JsonHelper.FromJson<Character>(dataAsJson);
-			Debug.Log("name:" + character[0].infos[0].name);
-//			foreach(object isxtem in character[0].infos) {
-//				Debug.Log("INFOS:" + item);
-//			}
-		} else {
-			Debug.Log ("///// NOPE ///////"); 
-		}
+//		string filePath = Path.Combine(Application.streamingAssetsPath, gameDataFileName);
+//
+//		if (File.Exists (filePath)) {
+//			// Read the json from the file into a string
+//			string dataAsJson = File.ReadAllText (filePath); 
+//			// Pass the json to JsonUtility, and tell it to create a GameData object from it
+//
+//			Character[] character = JsonHelper.FromJson<Character>(dataAsJson);
+//			Debug.Log("name:" + character[0].infos[0].name);
+////			foreach(object isxtem in character[0].infos) {
+////				Debug.Log("INFOS:" + item);
+////			}
+//		} else {
+//			Debug.Log ("///// NOPE ///////"); 
+//		}
 	}
 
 	
