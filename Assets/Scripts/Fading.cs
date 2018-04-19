@@ -8,7 +8,7 @@ public class Fading : MonoBehaviour {
 	public float fadeSpeed = 0.2f; 
 
 	private int drawDepth = -1000; 	
-	private float alpha = 1.0f;
+	private float alpha = 5f;
 	private int fadeDir = -1;
 
 	// Unity function to render GUI
