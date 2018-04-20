@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Vuforia;
 
@@ -13,6 +14,17 @@ public class testTorchLightEffect : MonoBehaviour, ITrackableEventHandler {
 	private bool isTrackableActive;
 	private bool mFlashEnabled = false;
 	private float multiplier;
+
+	private GameObject Plane;
+
+	private Renderer rend;
+
+	private Color[] pix;
+
+	private Texture2D texturePlane;
+	private Texture2D myTexture2D;
+	
+	public Transform target;
 
 	// Use this for initialization
 	void Start ()
@@ -34,6 +46,14 @@ public class testTorchLightEffect : MonoBehaviour, ITrackableEventHandler {
 
 		multiplier = 1.0f;
 
+		Plane = GameObject.Find("Plane");
+		
+		rend = GetComponent<Renderer>();
+		
+		texturePlane = Plane.GetComponent<MeshRenderer>().material.GetTexture("_Texture2") as Texture2D;
+		myTexture2D = new Texture2D(texturePlane.width, texturePlane.height);
+
+		arCamera = GameObject.Find("/ARCamera");
 	}
 	
 	// Update is called once per frame
@@ -44,8 +64,8 @@ public class testTorchLightEffect : MonoBehaviour, ITrackableEventHandler {
 			Vector3 delta = Camera.main.transform.position - mTrackableBehaviour.transform.position;
 			distance = delta.magnitude;
 			
-			float radius = distance / 100.0f;
-			//float radius = distance / 200.0f;
+			//float radius = distance / 100.0f;
+			float radius = distance / 200.0f;
 
 			if (radius < 0.1f)
 			{
@@ -54,8 +74,8 @@ public class testTorchLightEffect : MonoBehaviour, ITrackableEventHandler {
 			mat.SetFloat("_Radius", radius);
 
 			Quaternion rotationCamera = Camera.main.transform.rotation;
-			Quaternion target= mTrackableBehaviour.transform.rotation;
-			Quaternion rotation = rotationCamera * Quaternion.Inverse(target);
+			Quaternion rotationTarget= mTrackableBehaviour.transform.rotation;
+			Quaternion rotation = rotationCamera * Quaternion.Inverse(rotationTarget);
 			float rotationX = Mathf.Abs(rotation.x);
 
 			// Mapping de la valeur à passer au shader pour simuler la perspective lorsque
@@ -65,6 +85,64 @@ public class testTorchLightEffect : MonoBehaviour, ITrackableEventHandler {
 			float mappedRotationShader = Mathf.Lerp(_RotationLow, _RotationHigh, rotationX);
 			
 			mat.SetFloat("_Rotation", mappedRotationShader);
+			
+			
+			// TODO : Detecter si l'utilisateur à découvert tout le texte 
+			
+			//Debug.Log(renderer.material.GetTexture("map_scaled"));
+
+			Color[] pixel = myTexture2D.GetPixels(0, 0, texturePlane.width, texturePlane.height);
+			//Debug.Log(pixel);
+
+			float positionCamera = Mathf.Abs(Camera.main.transform.position.x);
+			float positionTarget = Mathf.Abs(mTrackableBehaviour.transform.position.x);
+
+			float distanceX = Camera.main.transform.position.x - mTrackableBehaviour.transform.position.x;
+			float distanceY = Camera.main.transform.position.z - mTrackableBehaviour.transform.position.z;
+			
+			Debug.Log(distanceX);
+			Debug.Log(distanceY);
+			Debug.Log("______________");
+			
+			//12
+			//3.5
+
+			float firstRepereX = 12f;
+			float firstRepereY = -3.5f;
+
+			bool firstRepereReached = false;
+			
+			float lasttRepereX = 0.3f;
+			float lastRepereY = -21f;
+
+			bool lastRepereReached = false;
+			
+
+//			Debug.Log(positionCamera - 1);
+//			Debug.Log(positionTarget);
+//			Debug.Log("_________________");
+
+			if (distanceX < (firstRepereX + 0.5f) && distanceY < (firstRepereY + 0.5f))
+			{
+				Debug.Log("first repere reached");
+				firstRepereReached = true;
+			}
+
+			if (distanceX > (lasttRepereX - 0.5f) && distanceY < (lastRepereY - 0.5f))
+			{
+				Debug.Log("last repere reached");
+				lastRepereReached = true;
+			}
+
+			if (firstRepereReached == true && lastRepereReached == true)
+			{
+				CameraDevice.Instance.SetFlashTorchMode(true);
+				mFlashEnabled = true;
+				Debug.Log("Hello journal !");
+			}			
+			
+
+			//Debug.Log("target is " + screenPos.x + " pixels from the left");
 		}
 	}
 	
@@ -83,8 +161,8 @@ public class testTorchLightEffect : MonoBehaviour, ITrackableEventHandler {
 		if (!mFlashEnabled)
 		{
 			// Turn on flash if it is currently disabled.
-			//		CameraDevice.Instance.SetFlashTorchMode(true);
-			//mFlashEnabled = true;
+			CameraDevice.Instance.SetFlashTorchMode(true);
+			mFlashEnabled = true;
 		}
 		else
 		{
