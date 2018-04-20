@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Features/TestMask.unity
     guid: 43c764548feea4b5088bf4de554fc65d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/AvezVousLu.unity
     guid: 7b93ea537c2624d8d917c04004f3d289
   - enabled: 1

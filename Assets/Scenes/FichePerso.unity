@@ -1229,7 +1229,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1914153342}
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
@@ -1710,3 +1710,51 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224504542862240890, guid: c4c332d4befa0440d85edd57d1d9748e,
     type: 2}
   m_PrefabInternal: {fileID: 147661088}
+--- !u!1001 &1914153341
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4426779079364006, guid: 37c6396660b5042d08c2eaef47c1d9d9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.2279918
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426779079364006, guid: 37c6396660b5042d08c2eaef47c1d9d9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -36.97814
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426779079364006, guid: 37c6396660b5042d08c2eaef47c1d9d9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 91.69092
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426779079364006, guid: 37c6396660b5042d08c2eaef47c1d9d9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426779079364006, guid: 37c6396660b5042d08c2eaef47c1d9d9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426779079364006, guid: 37c6396660b5042d08c2eaef47c1d9d9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426779079364006, guid: 37c6396660b5042d08c2eaef47c1d9d9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426779079364006, guid: 37c6396660b5042d08c2eaef47c1d9d9, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 37c6396660b5042d08c2eaef47c1d9d9, type: 2}
+  m_IsPrefabParent: 0
+--- !u!114 &1914153342 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114638052486459322, guid: 37c6396660b5042d08c2eaef47c1d9d9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1914153341}
+  m_Script: {fileID: 11500000, guid: dff4970724a2a4b9895ec9fd75ead724, type: 3}
