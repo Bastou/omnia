@@ -5,10 +5,11 @@ using UnityEngine;
 public class Fading : MonoBehaviour {
 
 	public Texture2D fadeOutTexture;
-	public float fadeSpeed = 0.2f; 
+	private float fadeTime = 0.3f; 
+	private float fadeSpeed = 10f;
 
 	private int drawDepth = -1000; 	
-	private float alpha = 5f;
+	private float alpha = 1.0f;
 	private int fadeDir = -1;
 
 	// Unity function to render GUI
@@ -28,12 +29,13 @@ public class Fading : MonoBehaviour {
 	// set fadeDir to the direction parm making the scene fade in if -1 and out if 1
 	public float BeginFade(int direction) {
 		fadeDir = direction;
-		return (fadeSpeed); // return the fadeSpeed var so it's easy to time the Application.LoadLevel();
+		return (fadeTime); // return the fadeSpeed var so it's easy to time the Application.LoadLevel();
 	}
 
 	// OnLevelWasLoaded  is called when a level is loaded. It takes loaded level index (int) as parameter so you can limit the fade in certain scenes
 	void OnLevelWasLoaded() {
 		// alpha = 1 // use this if alpha is not set to 1 by default
 		BeginFade (-1); // call the fade in function
+		Debug.Log ("init fade in with speed = "  + fadeTime);
 	}
 }

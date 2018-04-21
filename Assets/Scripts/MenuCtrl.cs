@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MenuCtrl : MonoBehaviour {
 
+	// TODO: Dans navigationctrl ->
 	private Button btnMap;
 	private Button btnPerso;
 	private Button btnJournal;
@@ -14,27 +15,35 @@ public class MenuCtrl : MonoBehaviour {
 	private RawImage iconPerso;
 	private RawImage iconJournal;
 	private Color _iconMapColor;
+	// <-
+
+	private Fading fading;
 
 	void Start()
 	{
-		
+
+		// Setup fading
+		fading = GetComponent<Fading> ();
+
+		// TODO: Dans navigationctrl ->
+
 //		// # Find btn map and set active if map is unlocked
-		if (btnMap == null && GameObject.Find("btnMap") && GameObject.Find("IconMap"))
-		{
-			btnMap = GameObject.Find("btnMap").GetComponent<Button>();	
-			btnMap.gameObject.SetActive(GameControl.control.isMapUnlocked == true);
-			iconMap = GameObject.Find("IconMap").GetComponent<RawImage>();
-			Color currColor = iconMap.color;
-			if (GameControl.control.isMapUnlocked)
-			{
-				currColor.a = 1f;
-			}
-			else
-			{
-				currColor.a = 0.4f;
-			}
-			iconMap.color = currColor;
-		}
+//		if (btnMap == null && GameObject.Find("btnMap") && GameObject.Find("IconMap"))
+//		{
+//			btnMap = GameObject.Find("btnMap").GetComponent<Button>();	
+//			btnMap.gameObject.SetActive(GameControl.control.isMapUnlocked == true);
+//			iconMap = GameObject.Find("IconMap").GetComponent<RawImage>();
+//			Color currColor = iconMap.color;
+//			if (GameControl.control.isMapUnlocked)
+//			{
+//				currColor.a = 1f;
+//			}
+//			else
+//			{
+//				currColor.a = 0.4f;
+//			}
+//			iconMap.color = currColor;
+//		}
 
 //		iconMap = GameObject.Find("IconMap").GetComponent<RawImage>();
 //		Debug.Log(iconMap);
@@ -51,6 +60,8 @@ public class MenuCtrl : MonoBehaviour {
 //		btnJournal = GameObject.Find("btnJournal").GetComponent<Button>();
 //		Debug.Log ("isJournalUnlocked = " + GameControl.control.isJournalUnlocked);
 //		btnJournal.gameObject.SetActive(GameControl.control.isJournalUnlocked == true);
+
+		// <-
 	}
 
 	void Update()
@@ -62,14 +73,16 @@ public class MenuCtrl : MonoBehaviour {
  	public void LoadScene(string sceneName) {
      		StartCoroutine(StartScene(sceneName));
      }
-	
+
+
+	// TODO: remove
 	public void LoadSceneQuick(string sceneName) {
 		SceneManager.LoadScene (sceneName);	 
 	}
 
 	IEnumerator StartScene(string sceneName) {
 		//button.onClick.AddListener(LoadScene()); -> load scene
-		float fadeTime = GetComponent<Fading> ().BeginFade (1); // 1 cause fade out
+		float fadeTime = fading.BeginFade (1); // 1 cause fade out
 		yield return new WaitForSeconds(fadeTime);
 		SceneManager.LoadScene (sceneName);	 		
  	}	 	
