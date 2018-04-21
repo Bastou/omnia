@@ -22,7 +22,6 @@ public class MenuCtrl : MonoBehaviour {
 		if (btnMap == null && GameObject.Find("btnMap") && GameObject.Find("IconMap"))
 		{
 			btnMap = GameObject.Find("btnMap").GetComponent<Button>();	
-			Debug.Log ("isMapUnlocked = " + GameControl.control.isMapUnlocked);
 			btnMap.gameObject.SetActive(GameControl.control.isMapUnlocked == true);
 			iconMap = GameObject.Find("IconMap").GetComponent<RawImage>();
 			Color currColor = iconMap.color;
