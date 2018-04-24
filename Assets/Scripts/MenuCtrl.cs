@@ -18,6 +18,7 @@ public class MenuCtrl : MonoBehaviour {
 	// <-
 
 	private Fading fading;
+	public Slider slider;
 
 	void Start()
 	{
@@ -66,7 +67,7 @@ public class MenuCtrl : MonoBehaviour {
 
 	void Update()
 	{
-		_iconMapColor.a = 0f; 
+		//_iconMapColor.a = 0f; 
 	}
 
 	// SceneLoader
@@ -84,7 +85,19 @@ public class MenuCtrl : MonoBehaviour {
 		//button.onClick.AddListener(LoadScene()); -> load scene
 		float fadeTime = fading.BeginFade (1); // 1 cause fade out
 		yield return new WaitForSeconds(fadeTime);
-		SceneManager.LoadScene (sceneName);	 		
+		//SceneManager.LoadScene (sceneName);	 	
+		AsyncOperation operation = SceneManager.LoadSceneAsync (sceneName);
+
+		//loadingScreen.SetActive (true);
+		Debug.Log(slider);
+		if (slider) {
+			while (!operation.isDone) {
+				float progress = Mathf.Clamp01 (operation.progress / 0.9f);
+				//Debug.Log (progress);
+				slider.value = progress;
+				yield return null;
+			}
+		}
  	}	 	
 
 }

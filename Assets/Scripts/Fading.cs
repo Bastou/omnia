@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Fading : MonoBehaviour {
 
 	public Texture2D fadeOutTexture;
-	private float fadeTime = 0.1f; 
-	private float fadeSpeed = 10f;
+	private float fadeTime = 0.2f; 
+	private float fadeSpeed = 5f;
 
 	private int drawDepth = -1000; 	
 	private float alpha = 1.0f;
 	private int fadeDir = -1;
+
+	public GameObject loadingScreen;
 
 	// Unity function to render GUI
 	void OnGUI() {
@@ -19,11 +22,29 @@ public class Fading : MonoBehaviour {
 		// force (clamp) the number between 0 and 1 cause GUI.color is bt 0 and 1
 		alpha = Mathf.Clamp01 (alpha);
 
+		// WITH TEXTURE
 		// set color of our GUI (in this case our texture). All color values remain the same & Alpha is set to alpha var
-		GUI.color = new Color (GUI.color.r, GUI.color.g, GUI.color.b, alpha); // Set alpha
-		GUI.depth = drawDepth; // Makesure black texture is on top
-		GUI.DrawTexture( new Rect(0, 0, Screen.width, Screen.height), fadeOutTexture); // Draw texture to fit the entire screen
+		//GUI.color = new Color (GUI.color.r, GUI.color.g, GUI.color.b, alpha); // Set alpha
+		//GUI.depth = drawDepth; // Makesure black texture is on top
+		//GUI.DrawTexture( new Rect(0, 0, Screen.width, Screen.height), fadeOutTexture); // Draw texture to fit the entire screen
 
+		// OR //
+
+		// WITH LOAD SCREEN
+		//Debug.Log(alpha);
+		if(loadingScreen) {
+			loadingScreen.GetComponent<CanvasGroup>().alpha = alpha;
+			// Fade out
+			if (fadeDir == 1) {
+				loadingScreen.SetActive (true);	
+			}
+
+			// fade in
+			if (fadeDir == -1) {
+				loadingScreen.SetActive (false);					
+			}	
+		}
+		
 	}
 
 	// set fadeDir to the direction parm making the scene fade in if -1 and out if 1
