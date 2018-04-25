@@ -37,7 +37,7 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 		}
 	}
 
-	
+
 	private void OnTrackingFound() 
 	{
 		

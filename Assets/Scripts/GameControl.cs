@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class GameControl : MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class GameControl : MonoBehaviour {
 	public bool isMapUnlocked;
 	public bool isPersoUnlocked;
 	public bool isJournalUnlocked;
+	public string sceneName;
 
 	// Créer un singleton GameControl pour la gestion des données persistantes
 	void Awake () 
@@ -23,6 +25,11 @@ public class GameControl : MonoBehaviour {
 		{
 			Destroy (gameObject);
 		}
+
+		if (sceneName.Length > 0)
+		{
+			LoadSceneDebug(sceneName);
+		} 
 	}
 
 	// Label pour voir l'état de la variable "isMapUnlocked"
@@ -59,6 +66,13 @@ public class GameControl : MonoBehaviour {
 			isPersoUnlocked = data.isPersoUnlocked;
 			isJournalUnlocked = data.isJournalUnlocked;
 		}
+	}
+	
+	// Loading de scene pour le debug
+	private void LoadSceneDebug(string sceneName)
+	{
+		Debug.Log("Scene need to be loaded for debug : " + sceneName);
+		SceneManager.LoadScene(sceneName);
 	}
 }
 
