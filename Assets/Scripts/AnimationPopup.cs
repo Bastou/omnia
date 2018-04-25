@@ -35,6 +35,9 @@ public class AnimationPopup : MonoBehaviour
 				case "map":
 					textNotification.text = "Citoyen, vous venez de débloquer un nouvel élément de la carte de Londres";
 					break;
+				case "hiddenText":
+					textNotification.text = "Citoyen, vous venez de débloquer une partie du journal de Winston";
+					break;
 				default: 
 					textNotification.text = "Des nouvelles sur la bande RTF des chiffres du metal";
 					break;

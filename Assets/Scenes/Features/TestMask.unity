@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.5748249, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -321,13 +321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649f5c2d37ee84e7abb86eb6b6a5c33d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sourceTex: {fileID: 0}
-  sourceRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
+  target: {fileID: 0}
+  AnimationPopupScript: {fileID: 0}
 --- !u!33 &1152719585
 MeshFilter:
   m_ObjectHideFlags: 0

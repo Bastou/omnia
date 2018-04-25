@@ -1,152 +1,112 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 using Vuforia;
 
-public class testTorchLightEffect : MonoBehaviour, ITrackableEventHandler {
+public class TestTorchLightEffect : MonoBehaviour, ITrackableEventHandler {
 
-	private GameObject arCamera;
-	private TrackableBehaviour mTrackableBehaviour;
-	private float distance;
-	private Renderer renderer;
-	private Material mat;
-	private bool isTrackableActive;
-	private bool mFlashEnabled = false;
-	private float multiplier;
+	private TrackableBehaviour _mTrackableBehaviour;
+	private float _distance;
+	private Renderer _renderer;
+	private Material _mat;
+	private bool _isTrackableActive;
+	private bool _mFlashEnabled;
 
-	private GameObject Plane;
+	private bool _firstRepereReached;
+	private bool _lastRepereReached;
 
-	private Renderer rend;
-
-	private Color[] pix;
-
-	private Texture2D texturePlane;
-	private Texture2D myTexture2D;
+	public AnimationPopup AnimationPopupScript;
 	
-	public Transform target;
-
 	// Use this for initialization
 	void Start ()
 	{
-		mTrackableBehaviour = GetComponent<TrackableBehaviour>();
+		_mTrackableBehaviour = GetComponent<TrackableBehaviour>();
 		
-		if (mTrackableBehaviour)
+		if (_mTrackableBehaviour)
 		{
-			mTrackableBehaviour.RegisterTrackableEventHandler(this);
+			_mTrackableBehaviour.RegisterTrackableEventHandler(this);
 		}
 		
-		renderer = GameObject.Find("Plane").GetComponentInChildren<Renderer>();
-		arCamera = GameObject.Find("ARCamera");
-		distance = 0.0f;
+		_renderer = GameObject.Find("Plane").GetComponentInChildren<Renderer>();
+		_distance = 0.0f;
 
-		mat = renderer.sharedMaterial;
+		_mat = _renderer.sharedMaterial;
 
-		isTrackableActive = false;
-
-		multiplier = 1.0f;
-
-		Plane = GameObject.Find("Plane");
-		
-		rend = GetComponent<Renderer>();
-		
-		texturePlane = Plane.GetComponent<MeshRenderer>().material.GetTexture("_Texture2") as Texture2D;
-		myTexture2D = new Texture2D(texturePlane.width, texturePlane.height);
-
-		arCamera = GameObject.Find("/ARCamera");
+		_isTrackableActive = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-		if (isTrackableActive == true)
+		if (_isTrackableActive != true) return;
+		var delta = Camera.main.transform.position - _mTrackableBehaviour.transform.position;
+		_distance = delta.magnitude;
+			
+		//Pour la compilation sur mobile
+		//float radius = distance / 100.0f;
+			
+		//Pour la compilation sur desktop
+		float radius = _distance / 200.0f;
+
+		if (radius > 0.1f)
 		{
-			Vector3 delta = Camera.main.transform.position - mTrackableBehaviour.transform.position;
-			distance = delta.magnitude;
-			
-			//float radius = distance / 100.0f;
-			float radius = distance / 200.0f;
-
-			if (radius < 0.1f)
-			{
-				radius = 0.1f;
-			}
-			mat.SetFloat("_Radius", radius);
-
-			Quaternion rotationCamera = Camera.main.transform.rotation;
-			Quaternion rotationTarget= mTrackableBehaviour.transform.rotation;
-			Quaternion rotation = rotationCamera * Quaternion.Inverse(rotationTarget);
-			float rotationX = Mathf.Abs(rotation.x);
-
-			// Mapping de la valeur à passer au shader pour simuler la perspective lorsque
-			// le device n'est pas parallèle au livre (mapping nécessaire pour ne pas trop déformer l'halo)
-			float _RotationLow = 0.5f;
-			float _RotationHigh = 0.9f;;
-			float mappedRotationShader = Mathf.Lerp(_RotationLow, _RotationHigh, rotationX);
-			
-			mat.SetFloat("_Rotation", mappedRotationShader);
-			
-			
-			// TODO : Detecter si l'utilisateur à découvert tout le texte 
-			
-			//Debug.Log(renderer.material.GetTexture("map_scaled"));
-
-			Color[] pixel = myTexture2D.GetPixels(0, 0, texturePlane.width, texturePlane.height);
-			//Debug.Log(pixel);
-
-			float positionCamera = Mathf.Abs(Camera.main.transform.position.x);
-			float positionTarget = Mathf.Abs(mTrackableBehaviour.transform.position.x);
-
-			float distanceX = Camera.main.transform.position.x - mTrackableBehaviour.transform.position.x;
-			float distanceY = Camera.main.transform.position.z - mTrackableBehaviour.transform.position.z;
-			
-			Debug.Log(distanceX);
-			Debug.Log(distanceY);
-			Debug.Log("______________");
-			
-			//12
-			//3.5
-
-			float firstRepereX = 12f;
-			float firstRepereY = -3.5f;
-
-			bool firstRepereReached = false;
-			
-			float lasttRepereX = 0.3f;
-			float lastRepereY = -21f;
-
-			bool lastRepereReached = false;
-			
-
-//			Debug.Log(positionCamera - 1);
-//			Debug.Log(positionTarget);
-//			Debug.Log("_________________");
-
-			if (distanceX < (firstRepereX + 0.5f) && distanceY < (firstRepereY + 0.5f))
-			{
-				Debug.Log("first repere reached");
-				firstRepereReached = true;
-			}
-
-			if (distanceX > (lasttRepereX - 0.5f) && distanceY < (lastRepereY - 0.5f))
-			{
-				Debug.Log("last repere reached");
-				lastRepereReached = true;
-			}
-
-			if (firstRepereReached == true && lastRepereReached == true)
-			{
-				CameraDevice.Instance.SetFlashTorchMode(true);
-				mFlashEnabled = true;
-				Debug.Log("Hello journal !");
-			}			
-			
-
-			//Debug.Log("target is " + screenPos.x + " pixels from the left");
+			radius = 0.1f;
 		}
+		_mat.SetFloat("_Radius", radius);
+
+		var rotationCamera = Camera.main.transform.rotation;
+		var rotationTarget= _mTrackableBehaviour.transform.rotation;
+		var rotation = rotationCamera * Quaternion.Inverse(rotationTarget);
+		var rotationX = Mathf.Abs(rotation.x);
+
+		// Mapping de la valeur à passer au shader pour simuler la perspective lorsque
+		// le device n'est pas parallèle au livre (mapping nécessaire pour ne pas trop déformer l'halo)
+		const float rotationLow = 0.5f;
+		const float rotationHigh = 0.9f;
+		var mappedRotationShader = Mathf.Lerp(rotationLow, rotationHigh, rotationX);
+
+		_mat.SetFloat("_Rotation", mappedRotationShader);
+
+		////////////
+		//
+		// Détection du passage de l'utilisateur dans le texte
+		//
+		////////////
+		
+		var distanceX = Camera.main.transform.position.x;
+			
+		// On utilise l'axe Z de la caméra car le plane est perpendiculaire au plan XY donc l'axe vertical du plane 
+		// correspond à l'axe z de la caméra
+		var distanceZ = Camera.main.transform.position.z;
+			
+						
+		// Plus on avance dans le text plus distanceX augmente et plus distanceY diminue
+		// Reperes xy en haut à gauche du text
+		const float firstRepereX = -5.5f;
+		const float firstRepereY = 0.0f;
+			
+		// Reperes xy en bas à droite du text
+		const float lastRepereX = -1.0f;
+		const float lastRepereY = -7f;
+			
+		// Si repere en haut à gauche détecté
+		if (distanceX < firstRepereX && distanceZ > firstRepereY)
+		{
+			Debug.Log("first repere reached");
+			_firstRepereReached = true;
+		}
+
+		// Si repere en bas à droite détecté
+		if (distanceX < lastRepereX && distanceZ < lastRepereY )
+		{
+			Debug.Log("last repere reached");
+			_lastRepereReached = true;
+		}
+			
+		// Si tout les repères ont été détecté
+		if (_firstRepereReached != true || _lastRepereReached != true) return;
+		AnimationPopup(targetName:"hiddenText");	
+		Debug.Log("Content unlocked  !");
 	}
 	
-	public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus) 
+	public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus)
 	{
 		if (newStatus == TrackableBehaviour.Status.DETECTED || newStatus == TrackableBehaviour.Status.TRACKED || newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED) 
 		{
@@ -157,30 +117,22 @@ public class testTorchLightEffect : MonoBehaviour, ITrackableEventHandler {
 		{
 			OnTrackingLost();
 		}
-		
-		if (!mFlashEnabled)
-		{
-			// Turn on flash if it is currently disabled.
-			CameraDevice.Instance.SetFlashTorchMode(true);
-			mFlashEnabled = true;
-		}
-		else
-		{
-			// Turn off flash if it is currently enabled.
-			CameraDevice.Instance.SetFlashTorchMode(false);
-			mFlashEnabled = false;
-		}
-	}
 
+		_mFlashEnabled = !_mFlashEnabled;
+	}
 
 	private void OnTrackingFound()
 	{
-		isTrackableActive = true;
-		
+		_isTrackableActive = true;
 	}
 
 	private void OnTrackingLost()
 	{
-		isTrackableActive = false;
+		_isTrackableActive = false;
+	}
+
+	private void AnimationPopup(string targetName)
+	{
+		AnimationPopupScript.MoveNotification(targetName);
 	}
 }
