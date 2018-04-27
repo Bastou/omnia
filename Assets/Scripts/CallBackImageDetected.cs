@@ -1,16 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using Vuforia;
 
 public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 	
 	private TrackableBehaviour mTrackableBehaviour;
+	//private ScanSoundNotifs ScanSoundNotifs;
 	public AnimationPopup AnimationPopupScript;
+	public ScanClickCtrl ScanClickCtrl;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
+		//ScanSoundNotifs = GetComponent<ScanSoundNotifs>();
+		
 		mTrackableBehaviour = GetComponent<TrackableBehaviour>();
 
 		if (mTrackableBehaviour) {
@@ -19,9 +21,9 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 	}
 
 	// Appel OnTrackingFound quand une image target est détectée et OnTrackingLost quand l'image target est perdue
-	public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus)
+	public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus) 
 	{
-		if (newStatus == TrackableBehaviour.Status.DETECTED || newStatus == TrackableBehaviour.Status.TRACKED || newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
+		if (newStatus == TrackableBehaviour.Status.DETECTED || newStatus == TrackableBehaviour.Status.TRACKED || newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED) 
 		{
 			OnTrackingFound();
 		}
@@ -31,17 +33,30 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 		}
 	}
 
-	private void OnTrackingFound()
+
+	private void OnTrackingFound() 
 	{
-		// Gère toutes les images target
+		
+		// Gere toutes les images target
 		switch (mTrackableBehaviour.TrackableName)
 		{
 			case "winston":
-				AnimationPopup();
+			    ScanClickCtrl.sceneName = "FichePerso";
+				AnimationPopup(targetName:mTrackableBehaviour.TrackableName);
 				break;
 			
 			case "map":
-				UnlockMap();
+				ScanClickCtrl.sceneName = "Map";
+				AnimationPopup(targetName:mTrackableBehaviour.TrackableName);
+				//UnlockMap();
+				break;
+			
+			case "son1":
+				AnimationPopup(targetName:mTrackableBehaviour.TrackableName);
+//				if (ScanSoundNotifs)
+//				{
+//					ScanSoundNotifs.ToggleSoundNotif();	
+//				}
 				break;
 			
 			default:
@@ -50,20 +65,20 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 		}		 
 	}
 	
-	private void onTrackingLost()
+	private void onTrackingLost() 
 	{
 	}
 
-	private void UnlockMap()
+	private void UnlockMap() 
 	{
 		// Déblocage de la map et sauvegarde des données
 		GameControl.control.isMapUnlocked = true;
 		GameControl.control.Save ();
 	}
 
-	private void AnimationPopup()
+	private void AnimationPopup(string targetName) 
 	{
 		// Apparition de la Popup
-		AnimationPopupScript.MoveNotification();
+		AnimationPopupScript.MoveNotification(targetName);
 	}
 }
