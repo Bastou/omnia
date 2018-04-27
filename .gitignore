@@ -193,3 +193,17 @@ Assets/Plugins/Editor/JetBrains/Unity3DRider\.cs\.meta
 \.idea/\.idea\.omnia-proto/\.idea/vcs\.xml
 
 \.idea/\.idea\.omnia-proto/\.idea/workspace\.xml
+
+Assets/Editor/Vuforia/CylinderTargetTextures\.meta
+
+Assets/Editor/Vuforia/CylinderTargetTextures/VuforiaMars_Images\.meta
+
+Assets/Editor/Vuforia/ForPrint\.meta
+
+Assets/Editor/Vuforia/ForPrint/ModelTarget\.meta
+
+Assets/Editor/Vuforia/TargetsetData\.meta
+
+Assets/Editor/Vuforia/VuforiaMars_ModelTarget\.meta
+
+Assets/Editor/Vuforia/VuforiaMars_VuMark\.meta

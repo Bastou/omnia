@@ -26,7 +26,8 @@ public class GameControl : MonoBehaviour {
 	}
 
 	// Sauvegarde les données
-	public void Save() {
+	public void Save()
+	{
 		BinaryFormatter bf = new BinaryFormatter ();
 		FileStream file = File.Create (Application.persistentDataPath + "/data.dat");
 
@@ -38,8 +39,10 @@ public class GameControl : MonoBehaviour {
 	}
 
 	// Charge les données
-	public void Load() {
-		if (File.Exists (Application.persistentDataPath + "/data.dat")) {
+	public void Load()
+	{
+		if (File.Exists (Application.persistentDataPath + "/data.dat"))
+		{
 			BinaryFormatter bf = new BinaryFormatter ();
 			FileStream file = File.Open (Application.persistentDataPath + "/data.dat", FileMode.Open);
 			PlayerData data = (PlayerData)bf.Deserialize(file); //Cast to generic object to PlayerData specifically

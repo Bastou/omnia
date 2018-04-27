@@ -11,12 +11,7 @@ public class AnimationPopup : MonoBehaviour {
 	
 	// Set la trigger "Move" dans l'animation controller
 	public void MoveNotification()
-	{
-		Debug.Log(anim.GetCurrentAnimatorStateInfo(0).IsName("animation_popup"));
-		//Debug.Log(anim.GetCurrentAnimatorStateInfo(0).IsName("Initial_state"));
-		//Debug.Log(anim.GetCurrentAnimatorClipInfo(0));
-			
-		
+	{				
 		if (!anim.GetCurrentAnimatorStateInfo(0).IsName("animation_popup")) {
 			anim.SetTrigger("Move");
 		}	
