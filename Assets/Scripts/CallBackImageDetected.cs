@@ -36,10 +36,10 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 
 	private void OnTrackingFound() 
 	{
-		
 		// Gere toutes les images target
 		switch (mTrackableBehaviour.TrackableName)
 		{
+			
 			case "winston":
 			    ScanClickCtrl.sceneName = "FichePerso";
 				AnimationPopup(targetName:mTrackableBehaviour.TrackableName);
@@ -47,7 +47,7 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 			
 			case "map":
 				ScanClickCtrl.sceneName = "Map";
-				AnimationPopup(targetName:mTrackableBehaviour.TrackableName);
+				AnimationPopup(targetName:mTrackableBehaviour.TrackableName);				
 				//UnlockMap();
 				break;
 			
