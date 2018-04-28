@@ -48,7 +48,7 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 			case "map":
 				ScanClickCtrl.sceneName = "Map";
 				AnimationPopup(targetName:mTrackableBehaviour.TrackableName);				
-				//UnlockMap();
+				UnlockMap();
 				break;
 			
 			case "son1":
