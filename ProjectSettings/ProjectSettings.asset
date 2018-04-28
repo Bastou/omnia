@@ -7,7 +7,7 @@ PlayerSettings:
   productGUID: eb966f42e95504a8bb0ee674786ffcef
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
-  defaultScreenOrientation: 4
+  defaultScreenOrientation: 1
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
@@ -160,7 +160,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.OmniaCorp.omnia
+    Android: com.OmniaCorp.omnia1984
     iOS: com.OmniaCorp.omnia1984
   buildNumber: {}
   AndroidBundleVersionCode: 1
@@ -650,7 +650,6 @@ PlayerSettings:
   XboxOneSplashScreen: {fileID: 0}
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
-  XboxOneXTitleMemory: 8
   xboxOneScriptCompiler: 0
   vrEditorSettings:
     daydream:
