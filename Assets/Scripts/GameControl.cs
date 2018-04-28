@@ -13,6 +13,8 @@ public class GameControl : MonoBehaviour {
 
 	private GUIStyle guiStyle = new GUIStyle();
 
+	private GUIStyle guiStyle = new GUIStyle();
+
 	// Créer un singleton GameControl pour la gestion des données persistantes
 	void Awake () 
 	{
