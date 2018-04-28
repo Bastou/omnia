@@ -47,12 +47,13 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 			case "winston":
 			    ScanClickCtrl.sceneName = "FichePerso";
 				AnimationPopup(targetName:mTrackableBehaviour.TrackableName);
+				UnlockSection("isPersoUnlocked");
 				break;
 			
 			case "map":
 				ScanClickCtrl.sceneName = "Map";
 				AnimationPopup(targetName:mTrackableBehaviour.TrackableName);
-				UnlockMap();
+				UnlockSection("isMapUnlocked");
 				break;
 			
 			case "son1":
@@ -73,10 +74,11 @@ public class CallBackImageDetected : MonoBehaviour, ITrackableEventHandler {
 	{
 	}
 
-	private void UnlockMap() 
+	private void UnlockSection(string sectionFlagName) 
 	{
 		// Déblocage de la map et sauvegarde des données
-		GameControl.control.isMapUnlocked = true;
+		//GameControl.control.isMapUnlocked = true;
+		GameControl.control.SetControlParam(sectionFlagName, true);
 		GameControl.control.Save ();
 	}
 

@@ -35,7 +35,7 @@ public class GameControl : MonoBehaviour {
 	// Label pour voir l'état de la variable "isMapUnlocked"
 	void OnGUI()
 	{
-		GUI.Label (new Rect (10, 10, 100, 30), "isMapUnlocked: " + isMapUnlocked);
+		//GUI.Label (new Rect (10, 10, 100, 30), "isMapUnlocked: " + isMapUnlocked);
 	}
 
 	// Sauvegarde les données
@@ -73,6 +73,17 @@ public class GameControl : MonoBehaviour {
 	{
 		Debug.Log("Scene need to be loaded for debug : " + sceneName);
 		SceneManager.LoadScene(sceneName);
+	}
+
+	public bool GetControlParam(string name)
+	{
+		var paramValue = (bool)this.GetType().GetField(name).GetValue(this);
+		return paramValue;
+	}
+	
+	public void SetControlParam(string name, bool value)
+	{
+		this.GetType().GetField(name).SetValue(this, value);
 	}
 }
 

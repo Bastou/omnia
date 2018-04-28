@@ -456,8 +456,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 547012361}
   m_HandleRect: {fileID: 547012360}
   m_Direction: 2
-  m_Value: 0.99999994
-  m_Size: 0
+  m_Value: 0.9999995
+  m_Size: 0.82818687
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -756,6 +756,11 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114797922655771636, guid: dcbddbc485ea740658fbf481da08a1a9,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0.509
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dcbddbc485ea740658fbf481da08a1a9, type: 2}
