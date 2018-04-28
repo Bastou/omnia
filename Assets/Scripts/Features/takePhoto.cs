@@ -14,6 +14,9 @@ public class takePhoto : MonoBehaviour {
 			webCamTexture = new WebCamTexture {deviceName = cam.name};
 			webCamTexture.Play ();
 		}
+		
+		Debug.Log("Hello");
+		Debug.Log(GameObject.Find("NavigationManager"));
 	}
 
 	public void snapshot()

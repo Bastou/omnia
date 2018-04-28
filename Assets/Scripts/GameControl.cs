@@ -12,6 +12,8 @@ public class GameControl : MonoBehaviour {
 	public bool isJournalUnlocked;
 	public string sceneName;
 
+	private GUIStyle guiStyle = new GUIStyle();
+
 	// Créer un singleton GameControl pour la gestion des données persistantes
 	void Awake () 
 	{
@@ -33,7 +35,9 @@ public class GameControl : MonoBehaviour {
 	// Label pour voir l'état de la variable "isMapUnlocked"
 	void OnGUI()
 	{
-		GUI.Label (new Rect (10, 10, 100, 30), "isMapUnlocked: " + isMapUnlocked);
+		guiStyle.fontSize = 80;
+		GUI.Label (new Rect (10, 10, 100, 30), "isMapUnlocked: " + isMapUnlocked, guiStyle);
+		
 	}
 
 	// Sauvegarde les données
