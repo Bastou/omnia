@@ -10,7 +10,6 @@ public class GameControl : MonoBehaviour {
 	public bool isMapUnlocked;
 	public bool isPersoUnlocked;
 	public bool isJournalUnlocked;
-	public string sceneName;
 
 	private GUIStyle guiStyle = new GUIStyle();
 
@@ -25,11 +24,6 @@ public class GameControl : MonoBehaviour {
 		{
 			Destroy (gameObject);
 		}
-
-		if (sceneName.Length > 0)
-		{
-			LoadSceneDebug(sceneName);
-		} 
 	}
 
 	// Label pour voir l'état de la variable "isMapUnlocked"
@@ -68,13 +62,6 @@ public class GameControl : MonoBehaviour {
 			isPersoUnlocked = data.isPersoUnlocked;
 			isJournalUnlocked = data.isJournalUnlocked;
 		}
-	}
-	
-	// Loading de scene pour le debug
-	private void LoadSceneDebug(string sceneName)
-	{
-		Debug.Log("Scene need to be loaded for debug : " + sceneName);
-		SceneManager.LoadScene(sceneName);
 	}
 }
 
