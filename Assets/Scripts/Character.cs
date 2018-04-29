@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Character : ScriptableObject
 {
 	public int id;
-	public Infos infos;
+	public InfosCharacter infos;
 
 	public void Print () {
 		Debug.Log (id + ": " + infos + " Infos" + infos.states[0].name);
@@ -16,13 +16,13 @@ public class Character : ScriptableObject
 }
 
 [Serializable]
-public class Infos
+public class InfosCharacter
 {
-	public State[] states;
+	public StateCharacter[] states;
 }
 
 [Serializable]
-public class State
+public class StateCharacter
 {
 	public int id;
 	public string name;
