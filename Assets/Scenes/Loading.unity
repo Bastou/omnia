@@ -264,6 +264,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &425606589 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114232461901242934, guid: 90c58e63bbaa34778861cbd0da0bc29c,
+    type: 2}
+  m_PrefabInternal: {fileID: 132500010}
+  m_Script: {fileID: 11500000, guid: dff4970724a2a4b9895ec9fd75ead724, type: 3}
 --- !u!1 &511239340
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,6 +298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 
+  MenuCtrl: {fileID: 425606589}
 --- !u!4 &511239342
 Transform:
   m_ObjectHideFlags: 0

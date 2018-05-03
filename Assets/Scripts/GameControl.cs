@@ -13,8 +13,6 @@ public class GameControl : MonoBehaviour {
 
 	private GUIStyle guiStyle = new GUIStyle();
 
-	private GUIStyle guiStyle = new GUIStyle();
-
 	// Créer un singleton GameControl pour la gestion des données persistantes
 	void Awake () 
 	{
@@ -64,6 +62,18 @@ public class GameControl : MonoBehaviour {
 			isPersoUnlocked = data.isPersoUnlocked;
 			isJournalUnlocked = data.isJournalUnlocked;
 		}
+	}
+
+	
+	public bool GetControlParam(string name)
+	{
+		var paramValue = (bool)this.GetType().GetField(name).GetValue(this);
+		return paramValue;
+	}
+	
+	public void SetControlParam(string name, bool value)
+	{
+		this.GetType().GetField(name).SetValue(this, value);
 	}
 }
 
