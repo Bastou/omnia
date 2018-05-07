@@ -5,8 +5,13 @@ using UnityEngine;
 public class CameraController : MonoBehaviour {
 
 	public float ZoomSpeed;
-	public float PanSpeed; 
+	public float PanSpeed = 200.0f; 
 	public float PanBuffer = 50.0f;
+
+	public float MaxPitch=25f;
+	public float MinPitch = -25f;
+
+	private float speed = 1.0F;
 
 	private Plane _Plane;
 
@@ -15,6 +20,8 @@ public class CameraController : MonoBehaviour {
 		_Plane = new Plane (Vector3.up, Vector3.zero);
 		Vector3 mapCenter = GetCenter(); // 16, 0, 16
 		transform.LookAt(mapCenter);
+		GameObject Map = GameObject.Find ("MapIso");
+
 	}
 	
 	// Update is called once per frame
@@ -24,25 +31,40 @@ public class CameraController : MonoBehaviour {
 	}
 
 	private void HandlePan() {
-		Vector2 mousePos = Input.mousePosition; 
-		// Vector3 dRight = transform.right.XZ(); 
-		// Vector3 dUp = transform.up.XZ(); 
+		
+		Vector3 center = GetCenter ();
 
-		if (mousePos.x < PanBuffer) {
-			transform.position -= transform.right * Time.fixedDeltaTime * PanSpeed;
-		}
-		else if (mousePos.x > Screen.width - PanBuffer) {
-			transform.position += transform.right * Time.fixedDeltaTime * PanSpeed;
-		}
-		if (mousePos.y < PanBuffer) {
-			transform.position -= transform.up * Time.fixedDeltaTime * PanSpeed;
-		}
-		else if (mousePos.y > Screen.height - PanBuffer) {
-			transform.position += transform.up * Time.fixedDeltaTime * PanSpeed;
-		}
+		if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Moved) {
+			Vector2 mousePos = Input.GetTouch (0).deltaPosition;
+
+//			if (mousePos.x < Screen.width / 2) {
+//				transform.position -= transform.right * Time.fixedDeltaTime * PanSpeed;
+//				Debug.Log ("mousePos.x < PanBuffer");
+//			} else if (mousePos.x > Screen.width / 2) {
+//				transform.position += transform.right * Time.fixedDeltaTime * PanSpeed;
+//				Debug.Log ("mousePos.x > PanBuffer");
+//			}
+//			if (mousePos.y < PanBuffer) {
+//				transform.position -= transform.up * Time.fixedDeltaTime * PanSpeed;
+//			} else if (mousePos.y > Screen.height - PanBuffer) {
+//				transform.position += transform.up * Time.fixedDeltaTime * PanSpeed;
+//			}
+			Debug.Log(speed);
+
+			transform.Translate(-mousePos.x * speed, -mousePos.y * speed, 0);
+
+			transform.LookAt (center);
 
 
-
+		
+//			if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Moved) {
+//				// Get movement of the finger since last frame
+//				Vector2 touchDeltaPosition = Input.GetTouch (0).deltaPosition;
+//
+//				// Move object across XY plane
+//				transform.Translate (-touchDeltaPosition.x * speed, -touchDeltaPosition.y * speed, 0);
+//			}
+		}
 	}
 
 	private void HandleZoom() {
@@ -79,7 +101,7 @@ public class CameraController : MonoBehaviour {
 		if (_Plane.Raycast (ray, out distance)) {
 			return ray.GetPoint (distance);
 		}
-
+			
 		return Vector3.zero;
 	}
 }
