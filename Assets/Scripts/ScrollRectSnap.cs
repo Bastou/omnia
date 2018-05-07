@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class ScrollRectSnap_CS : MonoBehaviour 
+public class ScrollRectSnap : MonoBehaviour 
 {
 	// Public Variables
 	public RectTransform panel;	// To hold the ScrollPanel
