@@ -5,27 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Loading.unity
     guid: 0d4d41e56b99544ca9a24372304a122f
   - enabled: 1
-    path: Assets/Scenes/Loading.unity
-    guid: 0d4d41e56b99544ca9a24372304a122f
+    path: Assets/Scenes/Welcome.unity
+    guid: 8cc3c05953feb42ad834eac9899a4068
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: aa997eafb055844ac8a7311719ce0f12
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+    path: Assets/Scenes/StartReading.unity
+    guid: 0f85f053a1bb247b0a8b39508bc414f2
   - enabled: 1
-    path: Assets/Scenes/AR Main.unity
-    guid: 68d338ac1a63b42c3ba6663a995b6074
+    path: Assets/Scenes/Contrat.unity
+    guid: 9e645963f24254eb58963afc2ba459f3
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: aa997eafb055844ac8a7311719ce0f12
@@ -35,18 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FichePerso.unity
     guid: f932222d4b378420d8a120307aee2a92
-  - enabled: 1
-    path: Assets/Scenes/Map.unity
-    guid: 7118d719f9f3d4eebaeebd16e862b089
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Map.unity
     guid: 7118d719f9f3d4eebaeebd16e862b089
