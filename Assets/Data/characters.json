@@ -1,0 +1,216 @@
+{
+  "characters": 
+  [
+    {
+      "id": 0, 
+      "infos" : 
+      [
+        {
+          "state": 0, 
+          "name": "Winston Smith", 
+          "image": "./images/jpg/characters/winston/0.jpg",
+          "age": 39, 
+          "occupation": "Commissariat des Archives", 
+          "relations": [ 
+            {
+              "id": 4
+            },
+            {
+              "id": 6
+            }
+          ], 
+          "mood": "happy",
+          "description": "Fonctionnaire du Parti âgé de 39 ans, Winston Smith travaille au Commissariat des Archives, où il est chargé de falsifier le passé pour le compte du régime. Son travail de falsification peut ressembler à ceci : « times 3.12.83 report ordrejour bb plusnonsatisf. Ref nonêtres récrire entier soumhaut avantclassement » qui est rendu ainsi en Ancilangue : « Le compte rendu de l'ordre du jour de Big Brother dans le numéro du journal le Times du 3 décembre 1983, est extrêmement insatisfaisant et fait allusion à des personnes non existantes. Récrire en entier et soumettre votre projet aux autorités compétentes avant d'envoyer au classement. » Il a été marié avec Catherine, d’avec laquelle il est séparé depuis dix ans.",
+          "unlocked": true
+        },
+        {
+          "state": 1, 
+          "name": "Winston Smith", 
+          "image": "./images/jpg/characters/winston/1.jpg",
+          "age": 39, 
+          "occupation": "Commissariat des Archives", 
+          "relations": [ 
+            {
+              "id": 4
+            },
+            {
+              "id": 6
+            },
+            {
+              "id": 2
+            }
+          ], 
+          "mood": "sad",
+          "description": "Lorem ipsum dolor sit amet...",
+          "unlocked": true
+        }
+      ]
+    },
+    {
+      "id": 1, 
+      "infos" : 
+      [
+        {
+          "state": 0, 
+          "name": "O’Brien", 
+          "image": "./images/jpg/characters/o-brien/0.jpg",
+          "age": 45, 
+          "occupation": "Haut fonctionnaire du Parti", 
+          "relations": [ 
+            {
+              "id": 0
+            }
+          ], 
+          "mood": "neutral",
+          "description": "Haut fonctionnaire du Parti, O’Brien est un homme mystérieux et intelligent. Il est membre du Ministère de l’Amour où son rôle est de « guérir » ceux qui ont commis un crime envers Big Brother. Dans 1984, il revêt une importance capitale en tant qu’instigateur de la traîtrise de Winston et cause de sa perte. C’est en effet lui qui, au moyen d’un regard, pousse Winston à tenir le journal où il couche sa haine envers Big Brother. Ayant acquis la confiance du héros par ce procédé, O’Brien utilise ensuite son influence pour le piéger.",
+          "unlocked": false
+        },
+        {
+          "state": 1, 
+          "name": "O’Brien", 
+          "image": "./images/jpg/characters/o-brien/1.jpg",
+          "age": 45, 
+          "occupation": "Haut fonctionnaire du Parti", 
+          "relations": [ 
+            {
+              "id": 0
+            },
+            {
+              "id": 3
+            }
+          ], 
+          "mood": "angry",
+          "description": "Haut fonctionnaire du Parti, O’Brien est un homme mystérieux et intelligent. Il est membre du Ministère de l’Amour où son rôle est de « guérir » ceux qui ont commis un crime envers Big Brother. Dans 1984, il revêt une importance capitale en tant qu’instigateur de la traîtrise de Winston et cause de sa perte. C’est en effet lui qui, au moyen d’un regard, pousse Winston à tenir le journal où il couche sa haine envers Big Brother. Ayant acquis la confiance du héros par ce procédé, O’Brien utilise ensuite son influence pour le piéger.",
+          "unlocked": true
+        }
+      ]
+    },
+    {
+      "id": 2, 
+      "infos" : 
+      [
+        {
+          "state": 0, 
+          "name": "Big Brother", 
+          "image": "./images/jpg/characters/big-brother/0.jpg",
+          "age": 45, 
+          "occupation": "Chef du Parti et leader d’Océania", 
+          "relations": null,
+          "mood": "neutral",
+          "description": "Chef du Parti et leader d’Océania, Big Brother n’existe pas en tant que tel. Il s’agit d’une image inventée par le Parti pour légitimer son appropriation de l’entièreté des pouvoirs du pays : il est un visage sur les journaux ou les affiches, la voix dans les micros, l'œil dans le télécran : « Sur les pièces de monnaie, sur les timbres, sur les livres, sur les bannières, sur les affiches, sur les paquets de cigarettes, partout ! Toujours ces yeux qui vous observaient, cette voix qui vous enveloppait. Dans le sommeil ou la veille, au travail ou à table, au-dedans ou au-dehors, au bain ou au lit, pas d'évasion. Vous ne possédiez rien, en dehors des quelques centimètres cubes de votre crâne. » Les habitants vouent un véritable culte à cette icône du régime sans savoir que c’est une supercherie. Cet engouement autour de sa personne explique l’importance qu’il revêt dans leur vie.",
+          "unlocked": false
+        },
+        {
+          "state": 1, 
+          "name": "Big Brother", 
+          "image": "./images/jpg/characters/big-brother/1.jpg",
+          "age": 45, 
+          "occupation": "Chef du Parti et leader d’Océania", 
+          "relations": null,
+          "mood": "neutral",
+          "description": "Chef du Parti et leader d’Océania, Big Brother n’existe pas en tant que tel. Il s’agit d’une image inventée par le Parti pour légitimer son appropriation de l’entièreté des pouvoirs du pays : il est un visage sur les journaux ou les affiches, la voix dans les micros, l'œil dans le télécran : « Sur les pièces de monnaie, sur les timbres, sur les livres, sur les bannières, sur les affiches, sur les paquets de cigarettes, partout ! Toujours ces yeux qui vous observaient, cette voix qui vous enveloppait. Dans le sommeil ou la veille, au travail ou à table, au-dedans ou au-dehors, au bain ou au lit, pas d'évasion. Vous ne possédiez rien, en dehors des quelques centimètres cubes de votre crâne. » Les habitants vouent un véritable culte à cette icône du régime sans savoir que c’est une supercherie. Cet engouement autour de sa personne explique l’importance qu’il revêt dans leur vie.",
+          "unlocked": true
+        }
+      ]
+    },
+    {
+      "id": 3, 
+      "infos" : 
+      [
+        {
+          "state": 0, 
+          "name": "Julia", 
+          "image": "./images/jpg/characters/julia/0.jpg",
+          "age": 26, 
+          "occupation": "Commission des Romans", 
+          "relations": null,
+          "mood": "neutral",
+          "description": "Fonctionnaire du Parti, âgée de 26 ans, Julia travaille à la Commission des Romans où elle imprime des livres pour le compte du régime.",
+          "unlocked": false
+        },
+        {
+          "state": 1, 
+          "name": "Julia", 
+          "image": "./images/jpg/characters/julia/1.jpg",
+          "age": 26, 
+          "occupation": "Commission des Romans", 
+          "relations": 
+          [ 
+            {
+              "id": 0
+            }
+          ], 
+          "mood": "happy",
+          "description": "Également fonctionnaire du Parti, âgée de 26 ans, Julia travaille à la Commission des Romans où elle imprime des livres pour le compte du régime. Tout comme Winston, elle a des pensées divergentes concernant le Parti et c’est en remarquant cette caractéristique chez le héros qu’elle en tombe amoureuse. Les actions de rébellion menées par Julia reposent essentiellement sur la perception de son image par le régime. Ainsi, elle participe à toutes les associations créées par ce dernier, fait des heures supplémentaires pour la gloire de Big Brother et se présente comme une ennemie acharnée de Goldstein. Tout ce dévouement envers le Parti lui permet de s’attirer sa sympathie au point d’être citée en exemple. Elle profite alors de sa réputation pour enfreindre les règles, notamment en couchant avec des membres du Parti ou en leur volant de la nourriture non contrôlée par le régime. Contrairement à Winston, Julia fait preuve d’un grand sens de la débrouillardise qui lui permet de mettre en place des ruses pour échapper à la vigilance de Big Brother. De plus, elle ne s’intéresse absolument pas au passé non falsifié : elle connaît les vices du monde dans lequel elle vit et veut simplement partager des moments de bonheur avec Winston.",
+          "unlocked": true
+        }
+      ]
+    },
+    {
+      "id": 3, 
+      "infos" : 
+      [
+        {
+          "state": 0, 
+          "name": "Julia", 
+          "image": "./images/jpg/characters/julia/0.jpg",
+          "age": 26, 
+          "occupation": "Commission des Romans", 
+          "relations": null,
+          "mood": "neutral",
+          "description": "Fonctionnaire du Parti, âgée de 26 ans, Julia travaille à la Commission des Romans où elle imprime des livres pour le compte du régime.",
+          "unlocked": false
+        },
+        {
+          "state": 1, 
+          "name": "Julia", 
+          "image": "./images/jpg/characters/julia/1.jpg",
+          "age": 26, 
+          "occupation": "Commission des Romans", 
+          "relations": 
+          [ 
+            {
+              "id": 0
+            }
+          ], 
+          "mood": "happy",
+          "description": "Également fonctionnaire du Parti, âgée de 26 ans, Julia travaille à la Commission des Romans où elle imprime des livres pour le compte du régime. Tout comme Winston, elle a des pensées divergentes concernant le Parti et c’est en remarquant cette caractéristique chez le héros qu’elle en tombe amoureuse. Les actions de rébellion menées par Julia reposent essentiellement sur la perception de son image par le régime. Ainsi, elle participe à toutes les associations créées par ce dernier, fait des heures supplémentaires pour la gloire de Big Brother et se présente comme une ennemie acharnée de Goldstein. Tout ce dévouement envers le Parti lui permet de s’attirer sa sympathie au point d’être citée en exemple. Elle profite alors de sa réputation pour enfreindre les règles, notamment en couchant avec des membres du Parti ou en leur volant de la nourriture non contrôlée par le régime. Contrairement à Winston, Julia fait preuve d’un grand sens de la débrouillardise qui lui permet de mettre en place des ruses pour échapper à la vigilance de Big Brother. De plus, elle ne s’intéresse absolument pas au passé non falsifié : elle connaît les vices du monde dans lequel elle vit et veut simplement partager des moments de bonheur avec Winston.",
+          "unlocked": true
+        }
+      ]
+    },
+    {
+      "id": 3, 
+      "infos" : 
+      [
+        {
+          "state": 0, 
+          "name": "Julia", 
+          "image": "./images/jpg/characters/julia/0.jpg",
+          "age": 26, 
+          "occupation": "Commission des Romans", 
+          "relations": null,
+          "mood": "neutral",
+          "description": "Fonctionnaire du Parti, âgée de 26 ans, Julia travaille à la Commission des Romans où elle imprime des livres pour le compte du régime.",
+          "unlocked": false
+        },
+        {
+          "state": 1, 
+          "name": "Julia", 
+          "image": "./images/jpg/characters/julia/1.jpg",
+          "age": 26, 
+          "occupation": "Commission des Romans", 
+          "relations": 
+          [ 
+            {
+              "id": 0
+            }
+          ], 
+          "mood": "happy",
+          "description": "Également fonctionnaire du Parti, âgée de 26 ans, Julia travaille à la Commission des Romans où elle imprime des livres pour le compte du régime. Tout comme Winston, elle a des pensées divergentes concernant le Parti et c’est en remarquant cette caractéristique chez le héros qu’elle en tombe amoureuse. Les actions de rébellion menées par Julia reposent essentiellement sur la perception de son image par le régime. Ainsi, elle participe à toutes les associations créées par ce dernier, fait des heures supplémentaires pour la gloire de Big Brother et se présente comme une ennemie acharnée de Goldstein. Tout ce dévouement envers le Parti lui permet de s’attirer sa sympathie au point d’être citée en exemple. Elle profite alors de sa réputation pour enfreindre les règles, notamment en couchant avec des membres du Parti ou en leur volant de la nourriture non contrôlée par le régime. Contrairement à Winston, Julia fait preuve d’un grand sens de la débrouillardise qui lui permet de mettre en place des ruses pour échapper à la vigilance de Big Brother. De plus, elle ne s’intéresse absolument pas au passé non falsifié : elle connaît les vices du monde dans lequel elle vit et veut simplement partager des moments de bonheur avec Winston.",
+          "unlocked": true
+        }
+      ] 
+    }
+  ]
+ }

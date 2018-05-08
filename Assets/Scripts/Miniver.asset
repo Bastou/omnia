@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6636b1f329c5a4fdab8065fb343f8202, type: 3}
+  m_Name: Miniver
+  m_EditorClassIdentifier: 
+  id: 0
+  infos:
+    states:
+    - id: 0
+      name: Miniver
+      description: "Le Miniver est le Minist\xE8re de la V\xE9rit\xE9 (le nom est
+        la contraction de la fonction ; en version originale, sous le nom de Minitrue
+        pour Ministry of Truth). Il s'agit d'un terme de novlangue, qui fait intervenir
+        la doublepens\xE9e, puisqu'il s'agit en fait d'un minist\xE8re du mensonge,
+        de la propagande : un organe du pouvoir qui r\xE9\xE9crit l'histoire aussi
+        souvent que \xAB n\xE9cessaire \xBB. Par exemple, quand l'Oc\xE9ania est en
+        guerre contre l'Eurasia (et alli\xE9e \xE0 l'Estasia), le Miniver d\xE9truit
+        tous les documents datant de l'\xE9poque o\xF9 les alliances \xE9taient inverses."
+      unlocked: 0
+    - id: 1
+      name: Miniver
+      description: "Le Miniver est le Minist\xE8re de la V\xE9rit\xE9 (le nom est
+        la contraction de la fonction ; en version originale, sous le nom de Minitrue
+        pour Ministry of Truth). Il s'agit d'un terme de novlangue, qui fait intervenir
+        la doublepens\xE9e, puisqu'il s'agit en fait d'un minist\xE8re du mensonge,
+        de la propagande : un organe du pouvoir qui r\xE9\xE9crit l'histoire aussi
+        souvent que \xAB n\xE9cessaire \xBB. Par exemple, quand l'Oc\xE9ania est en
+        guerre contre l'Eurasia (et alli\xE9e \xE0 l'Estasia), le Miniver d\xE9truit
+        tous les documents datant de l'\xE9poque o\xF9 les alliances \xE9taient inverses."
+      unlocked: 1

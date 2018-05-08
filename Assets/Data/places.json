@@ -1,0 +1,45 @@
+{
+	"place": 
+	[
+		{
+			"id": 0, 
+			"infos" : 
+			[
+				{
+					"state": 0, 
+					"name": "Miniver", 
+					"model": "./images/obj/map/miniver/0.jpg",
+					"description": "Le Miniver est le Ministère de la Vérité (le nom est la contraction de la fonction ; en version originale, sous le nom de Minitrue pour Ministry of Truth). Il s'agit d'un terme de novlangue, qui fait intervenir la doublepensée, puisqu'il s'agit en fait d'un ministère du mensonge, de la propagande : un organe du pouvoir qui réécrit l'histoire aussi souvent que « nécessaire ». Par exemple, quand l'Océania est en guerre contre l'Eurasia (et alliée à l'Estasia), le Miniver détruit tous les documents datant de l'époque où les alliances étaient inverses.", 
+					"unlocked": "false"
+				},
+				{
+					"state": 1, 
+					"name": "Miniver", 
+					"model": "./images/obj/map/miniver/1.jpg",
+					"description": "Le Miniver est le Ministère de la Vérité (le nom est la contraction de la fonction ; en version originale, sous le nom de Minitrue pour Ministry of Truth). Il s'agit d'un terme de novlangue, qui fait intervenir la doublepensée, puisqu'il s'agit en fait d'un ministère du mensonge, de la propagande : un organe du pouvoir qui réécrit l'histoire aussi souvent que « nécessaire ». Par exemple, quand l'Océania est en guerre contre l'Eurasia (et alliée à l'Estasia), le Miniver détruit tous les documents datant de l'époque où les alliances étaient inverses.", 
+					"unlocked": "true"
+				}
+			]
+		},
+		{
+			"id": 1, 
+			"infos" : 
+			[
+				{
+					"state": 0, 
+					"name": "Miniamour", 
+					"model": "./images/obj/map/miniamour/0.jpg",
+					"description": "Le ministère de l'amour s'occupe de la torture", 
+					"unlocked": "false"
+				},
+				{
+					"state": 1, 
+					"name": "Miniver", 
+					"model": "./images/obj/map/miniamour/1.jpg",
+					"description": "Le ministère de l'amour s'occupe de la torture", 
+					"unlocked": "true"
+				}
+			]
+		}
+	]
+}

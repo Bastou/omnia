@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91548b5754cea4f6497b404e361796a9, type: 3}
+  m_Name: Winston
+  m_EditorClassIdentifier: 
+  id: 0
+  infos:
+    states:
+    - id: 0
+      name: Winston Smith
+      age: 39
+      image: {fileID: 0}
+      occupation: Commissariat des Archives
+      relations:
+      - id: 2
+      - id: 3
+      - id: 4
+      mood: happy
+      description: "Fonctionnaire du Parti \xE2g\xE9 de 39 ans, Winston Smith travaille
+        au Commissariat des Archives, o\xF9 il est charg\xE9 de falsifier le pass\xE9
+        pour le compte du r\xE9gime. Son travail de falsification peut ressembler
+        \xE0 ceci : \xAB times 3.12.83 report ordrejour bb plusnonsatisf. Ref non\xEAtres
+        r\xE9crire entier soumhaut avantclassement \xBB qui est rendu ainsi en Ancilangue
+        : \xAB Le compte rendu de l'ordre du jour de Big Brother dans le num\xE9ro
+        du journal le Times du 3 d\xE9cembre 1983, est extr\xEAmement insatisfaisant
+        et fait allusion \xE0 des personnes non existantes. R\xE9crire en entier et
+        soumettre votre projet aux autorit\xE9s comp\xE9tentes avant d'envoyer au
+        classement. \xBB Il a \xE9t\xE9 mari\xE9 avec Catherine, d\u2019avec laquelle
+        il est s\xE9par\xE9 depuis dix ans."
+      unlocked: 1
+    - id: 1
+      name: 
+      age: 39
+      image: {fileID: 0}
+      occupation: 
+      relations: []
+      mood: 
+      description: 
+      unlocked: 0
