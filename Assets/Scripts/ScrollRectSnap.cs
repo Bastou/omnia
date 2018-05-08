@@ -13,10 +13,17 @@ public class ScrollRectSnap : MonoBehaviour
 	// Private Variables
 	public float[] distance;	// All buttons' distance to the center
 	public float[] distReposition;
+    public GameObject blur;
+
+
 	private bool dragging = false;	// Will be true, while we drag the panel
 	private int bttnDistance;	// Will hold the distance between the buttons
 	private int minButtonNum;	// To hold the number of the button, with smallest distance to center
 	private int bttnLength;
+    private bool transi = false;
+
+
+
 
     private string[] names = {"Big Brother", "O'Brien", "Winston Smith", "Goldstein" };
 
@@ -38,7 +45,7 @@ public class ScrollRectSnap : MonoBehaviour
 
 			distance[i] = Mathf.Abs(distReposition[i]);
 
-			if (distReposition[i] > 1200)
+			if (distReposition[i] > 1050)
 			{
 				float curX = bttn[i].GetComponent<RectTransform>().anchoredPosition.x;
 				float curY = bttn[i].GetComponent<RectTransform>().anchoredPosition.y;
@@ -47,7 +54,7 @@ public class ScrollRectSnap : MonoBehaviour
 				bttn[i].GetComponent<RectTransform>().anchoredPosition = newAnchoredPos;
 			}
 
-			if (distReposition[i] < -1200)
+			if (distReposition[i] < -1050)
 			{
 				float curX = bttn[i].GetComponent<RectTransform>().anchoredPosition.x;
 				float curY = bttn[i].GetComponent<RectTransform>().anchoredPosition.y;
@@ -57,17 +64,65 @@ public class ScrollRectSnap : MonoBehaviour
 			}
 		}
 
-		float minDistance = Mathf.Min(distance);	// Get the min distance
+		float minDistance = Mathf.Min(distance);    // Get the min distance
+         
 
-		for (int a = 0; a < bttn.Length; a++)
-		{
-			if (minDistance == distance[a])
-			{
-				minButtonNum = a;
-                Debug.Log(bttn[a].name);
-
+        for (int a = 0; a < bttn.Length; a++)
+        {
+            if (minDistance == distance[a])
+            {
+                minButtonNum = a;
                 nameCharacter.text = names[a];
-			}
+                Debug.Log(bttn[a].transform.GetChild(0).GetComponent<RectTransform>().sizeDelta);
+
+                switch (a)
+                {
+                    case 0:
+                        bttn[a].transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(264, 449);
+                        blur.SetActive(true);
+                        break;
+                    case 1:
+                        bttn[a].transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(228, 449);
+                        blur.SetActive(true);
+                        break;
+                    case 2:
+                        bttn[a].transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(228, 449);
+                        blur.SetActive(false);
+                        break;
+                    case 3:
+                        bttn[a].transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(323, 449); 
+                        blur.SetActive(true);
+                        break;
+                    default:
+                        break;
+                }
+
+                Debug.Log(a);
+                bttn[a].onClick.AddListener(delegate { TaskOnClip(a); });
+
+                if(transi == true) {
+                    bttn[2].transform.GetChild(0).transform.Translate(10, 10, Time.deltaTime);   
+
+                }
+            } else { 
+                switch (a)
+                {
+                    case 0:
+                        bttn[a].transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(132, 224);
+                        break;
+                    case 1:
+                        bttn[a].transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(114, 224);
+                        break;
+                    case 2:
+                        bttn[a].transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(114, 224);
+                        break;
+                    case 3:
+                        bttn[a].transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(162, 224);
+                        break;
+                    default:
+                        break;
+                }
+            }
 		}
 
 		if (!dragging)
@@ -76,6 +131,11 @@ public class ScrollRectSnap : MonoBehaviour
 			LerpToBttn (-bttn[minButtonNum].GetComponent<RectTransform>().anchoredPosition.x);
 		}
 	}
+
+    void TaskOnClip (int a) {
+        transi = true;
+
+    } 
 
 	void LerpToBttn(float position)
 	{
@@ -89,7 +149,6 @@ public class ScrollRectSnap : MonoBehaviour
 	public void StartDrag()
 	{
 		dragging = true;
-        Debug.Log("Hello world");
 	}
 
 	public void EndDrag()
