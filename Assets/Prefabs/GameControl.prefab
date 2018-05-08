@@ -51,4 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7c989b51b1f4188a2aed0701006dde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reputation: 0
+  isMapUnlocked: 0
+  isPersoUnlocked: 0
+  isJournalUnlocked: 0

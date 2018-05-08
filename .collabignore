@@ -1,0 +1,51 @@
+# ===========================
+# Default Collab Ignore Rules
+# ===========================
+
+# OS Generated
+# ============
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+[Tt]humbs.db
+[Dd]esktop.ini
+
+# Visual Studio / MonoDevelop generated
+# =====================================
+[Ee]xported[Oo]bj/
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+
+# Unity generated
+# ===============
+[Oo]bj/
+[Bb]uild
+sysinfo.txt
+*.stackdump
+
+# User-specific configurations
+# ===============
+.idea/
+*.iml
+
+# Project specific
+# ===============
+Assets/Plugins/
+
+# Vuforia Default Files
+Assets/Editor/Vuforia/CylinderTargetTextures\.meta
+Assets/Editor/Vuforia/CylinderTargetTextures/VuforiaMars_Images\.meta
+Assets/Editor/Vuforia/ForPrint\.meta
+Assets/Editor/Vuforia/ForPrint/ModelTarget\.meta
+Assets/Editor/Vuforia/TargetsetData\.meta
+Assets/Editor/Vuforia/VuforiaMars_ModelTarget\.meta
+Assets/Editor/Vuforia/VuforiaMars_VuMark\.meta
