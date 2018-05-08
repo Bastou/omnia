@@ -39,13 +39,13 @@ sysinfo.txt
 
 # Project specific
 # ===============
-Assets/Plugins/
+/Assets/Plugins/
 
 # Vuforia Default Files
-Assets/Editor/Vuforia/CylinderTargetTextures\.meta
-Assets/Editor/Vuforia/CylinderTargetTextures/VuforiaMars_Images\.meta
-Assets/Editor/Vuforia/ForPrint\.meta
-Assets/Editor/Vuforia/ForPrint/ModelTarget\.meta
-Assets/Editor/Vuforia/TargetsetData\.meta
-Assets/Editor/Vuforia/VuforiaMars_ModelTarget\.meta
-Assets/Editor/Vuforia/VuforiaMars_VuMark\.meta
+/Assets/Editor/Vuforia/CylinderTargetTextures\.meta
+/Assets/Editor/Vuforia/CylinderTargetTextures/VuforiaMars_Images\.meta
+/Assets/Editor/Vuforia/ForPrint\.meta
+/Assets/Editor/Vuforia/ForPrint/ModelTarget\.meta
+/Assets/Editor/Vuforia/TargetsetData\.meta
+/Assets/Editor/Vuforia/VuforiaMars_ModelTarget\.meta
+/Assets/Editor/Vuforia/VuforiaMars_VuMark\.meta
