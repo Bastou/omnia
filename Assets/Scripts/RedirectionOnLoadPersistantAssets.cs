@@ -5,9 +5,9 @@ public class RedirectionOnLoadPersistantAssets : MonoBehaviour
 {
 
 	public string sceneName;
-	public MenuCtrl MenuCtrl;
+	//private MenuCtrl MenuCtrl;
 
-	private GameObject NavigationManager;
+	//private SceneController SceneController;
 	private GameObject GameControl;
 
 	// Use this for initialization
@@ -20,13 +20,13 @@ public class RedirectionOnLoadPersistantAssets : MonoBehaviour
 		}
 
 		GameControl = GameObject.Find("GameControl");
-		NavigationManager = GameObject.Find("NavigationManager");
+		//SceneController = GameObject.Find("SceneController").GetComponent<SceneController>();
 
-		if (NavigationManager && GameControl)
+		if (SceneController.Instance && GameControl)
 		{
-			DontDestroyOnLoad(NavigationManager);
+			//DontDestroyOnLoad(SceneController);
 			Debug.Log("All persistant objects loaded");
-			MenuCtrl.LoadScene(sceneName);
+			SceneController.Instance.LoadScene(sceneName);
 		}
 		else
 		{

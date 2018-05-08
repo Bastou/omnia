@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class NavigationCtrl : MonoBehaviour {
 
-	private MenuCtrl menuCtrl;
+	//private MenuCtrl menuCtrl;
 
 	// Use this for initialization
 	void Start () {
 		// Get objects
-		menuCtrl = FindObjectOfType<MenuCtrl> ();
+		//menuCtrl = FindObjectOfType<MenuCtrl> ();
 		//gameControl = FindObjectOfType<GameControl> ();
 		CtrlBtnNavState("btnMap", "isMapUnlocked");
 		CtrlBtnNavState("btnPerso", "isPersoUnlocked");
@@ -23,7 +23,8 @@ public class NavigationCtrl : MonoBehaviour {
 
 	public void BtnClickLoadScene(string sceneName) {
 		print(EventSystem.current.currentSelectedGameObject.name);
-		menuCtrl.LoadScene(sceneName);
+		//menuCtrl.LoadScene(sceneName);
+		SceneController.Instance.LoadScene(sceneName);
 	}
 
 	public void CtrlBtnNavState(string btnName, string unlockParamName)
