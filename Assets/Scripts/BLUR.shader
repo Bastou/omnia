@@ -3,7 +3,7 @@
 Shader "Custom/BLUR" {
     Properties {
         _Color ("Main Color", Color) = (1,1,1,1)
-        _BumpAmt  ("Distortion", Range (0,128)) = 1000000
+        _BumpAmt  ("Distortion", Range (0,128)) = 10
         _MainTex ("Tint Color (RGB)", 2D) = "white" {}
         _BumpMap ("Normalmap", 2D) = "bump" {}
         _Size ("Size", Range(0, 20)) = 1
@@ -59,15 +59,15 @@ Shader "Custom/BLUR" {
                  
                     half4 sum = half4(0,0,0,0);
                     #define GRABPIXEL(weight,kernelx) tex2Dproj( _GrabTexture, UNITY_PROJ_COORD(float4(i.uvgrab.x + _GrabTexture_TexelSize.x * kernelx*_Size, i.uvgrab.y, i.uvgrab.z, i.uvgrab.w))) * weight
-                    sum += GRABPIXEL(0.05, -4.0);
-                    sum += GRABPIXEL(0.09, -3.0);
-                    sum += GRABPIXEL(0.12, -2.0);
-                    sum += GRABPIXEL(0.15, -1.0);
+                    sum += GRABPIXEL(0.05, -16.0);
+                    sum += GRABPIXEL(0.09, -12.0);
+                    sum += GRABPIXEL(0.12, -8.0);
+                    sum += GRABPIXEL(0.15, -4.0);
                     sum += GRABPIXEL(0.18,  0.0);
-                    sum += GRABPIXEL(0.15, +1.0);
-                    sum += GRABPIXEL(0.12, +2.0);
-                    sum += GRABPIXEL(0.09, +3.0);
-                    sum += GRABPIXEL(0.05, +4.0);
+                    sum += GRABPIXEL(0.15, +4.0);
+                    sum += GRABPIXEL(0.12, +8.0);
+                    sum += GRABPIXEL(0.09, +12.0);
+                    sum += GRABPIXEL(0.05, +16.0);
                  
                     return sum;
                 }

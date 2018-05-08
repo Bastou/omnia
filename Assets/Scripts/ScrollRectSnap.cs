@@ -8,6 +8,7 @@ public class ScrollRectSnap : MonoBehaviour
 	public RectTransform panel;	// To hold the ScrollPanel
 	public Button[] bttn;
 	public RectTransform center;	// Center to compare the distance for each button
+    public Text nameCharacter;
 
 	// Private Variables
 	public float[] distance;	// All buttons' distance to the center
@@ -16,6 +17,8 @@ public class ScrollRectSnap : MonoBehaviour
 	private int bttnDistance;	// Will hold the distance between the buttons
 	private int minButtonNum;	// To hold the number of the button, with smallest distance to center
 	private int bttnLength;
+
+    private string[] names = {"Big Brother", "O'Brien", "Winston Smith", "Goldstein" };
 
 	void Start()
 	{
@@ -32,6 +35,7 @@ public class ScrollRectSnap : MonoBehaviour
 		for (int i = 0; i < bttn.Length; i++)
 		{
 			distReposition[i] = center.GetComponent<RectTransform>().position.x - bttn[i].GetComponent<RectTransform>().position.x;
+
 			distance[i] = Mathf.Abs(distReposition[i]);
 
 			if (distReposition[i] > 1200)
@@ -60,6 +64,9 @@ public class ScrollRectSnap : MonoBehaviour
 			if (minDistance == distance[a])
 			{
 				minButtonNum = a;
+                Debug.Log(bttn[a].name);
+
+                nameCharacter.text = names[a];
 			}
 		}
 
@@ -76,11 +83,13 @@ public class ScrollRectSnap : MonoBehaviour
 		Vector2 newPosition = new Vector2 (newX, panel.anchoredPosition.y);
 
 		panel.anchoredPosition = newPosition;
+
 	}
 
 	public void StartDrag()
 	{
 		dragging = true;
+        Debug.Log("Hello world");
 	}
 
 	public void EndDrag()
