@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Fading : MonoBehaviour {
 
-	public Texture2D fadeOutTexture;
+	//public Texture2D fadeOutTexture;
 	private float fadeTime = 0.2f; 
 	private float fadeSpeed = 5f;
 
@@ -13,7 +13,13 @@ public class Fading : MonoBehaviour {
 	private float alpha = 1.0f;
 	private int fadeDir = -1;
 
-	public GameObject loadingScreen;
+	private GameObject loadingScreen;
+	
+	void Start() {
+		loadingScreen = Instantiate(Resources.Load("LoadingScreen")) as GameObject; 
+		loadingScreen.transform.SetParent (GameObject.Find("UI").transform, false);
+		print(loadingScreen);
+	}
 
 	// Unity function to render GUI
 	void OnGUI() {

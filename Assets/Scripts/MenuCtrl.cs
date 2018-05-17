@@ -6,69 +6,19 @@ using UnityEngine.UI;
 
 public class MenuCtrl : MonoBehaviour {
 
-	// TODO: Dans navigationctrl ->
-	private Button btnMap;
-	private Button btnPerso;
-	private Button btnJournal;
-	
-	private RawImage iconMap;
-	private RawImage iconPerso;
-	private RawImage iconJournal;
-	private Color _iconMapColor;
-	// <-
-
 	private Fading fading;
-	public Slider slider;
+	private Slider slider;
 
 	void Start()
 	{
 
 		// Setup fading
 		fading = GetComponent<Fading> ();
+		slider = GameObject.Find("Slider").GetComponent<Slider>();
+		print(slider);
 
-		// TODO: Dans navigationctrl ->
-
-//		// # Find btn map and set active if map is unlocked
-//		if (btnMap == null && GameObject.Find("btnMap") && GameObject.Find("IconMap"))
-//		{
-//			btnMap = GameObject.Find("btnMap").GetComponent<Button>();	
-//			btnMap.gameObject.SetActive(GameControl.control.isMapUnlocked == true);
-//			iconMap = GameObject.Find("IconMap").GetComponent<RawImage>();
-//			Color currColor = iconMap.color;
-//			if (GameControl.control.isMapUnlocked)
-//			{
-//				currColor.a = 1f;
-//			}
-//			else
-//			{
-//				currColor.a = 0.4f;
-//			}
-//			iconMap.color = currColor;
-//		}
-
-//		iconMap = GameObject.Find("IconMap").GetComponent<RawImage>();
-//		Debug.Log(iconMap);
-//		_iconMapColor = iconMap.color;
-//		_iconMapColor.a = 0f; 
-
-
-//		// # Find btn perso and set active if perso is unlocked
-//		btnPerso = GameObject.Find("btnPerso").GetComponent<Button>();
-//		Debug.Log ("isPersoUnlocked = " + GameControl.control.isPersoUnlocked);
-//		btnPerso.gameObject.SetActive(GameControl.control.isPersoUnlocked == true);
-//		
-//		// # Find btn perso and set active if perso is unlocked
-//		btnJournal = GameObject.Find("btnJournal").GetComponent<Button>();
-//		Debug.Log ("isJournalUnlocked = " + GameControl.control.isJournalUnlocked);
-//		btnJournal.gameObject.SetActive(GameControl.control.isJournalUnlocked == true);
-
-		// <-
 	}
 
-	void Update()
-	{
-		//_iconMapColor.a = 0f; 
-	}
 
 	// SceneLoader
  	public void LoadScene(string sceneName) {
@@ -89,7 +39,7 @@ public class MenuCtrl : MonoBehaviour {
 		AsyncOperation operation = SceneManager.LoadSceneAsync (sceneName);
 
 		//loadingScreen.SetActive (true);
-		Debug.Log(slider);
+		//Debug.Log(slider);
 		if (slider) {
 			while (!operation.isDone) {
 				float progress = Mathf.Clamp01 (operation.progress / 0.9f);
